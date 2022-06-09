@@ -31,3 +31,12 @@
    * [Content](#content)
    * [Media](#media)
    * [Acknowledgements](#acknowledgements)
+
+
+## Technologies
+
+### Languages Used
+
+### Frameworks, Libraries & Programs Used
+
+- https://miniwebtool.com/django-secret-key-generator/
