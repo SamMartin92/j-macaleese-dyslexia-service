@@ -32,6 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['jmcds.herokuapp.com', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://jmcds.herokuapp.com/', 'https://8000-sammartin92-jmacaleesed-01axxq9kfz7.ws-eu47.gitpod.io']
 
 
 # Application definition
@@ -57,6 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'jmcds.urls'
+
 
 TEMPLATES = [
     {
