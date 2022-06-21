@@ -29,5 +29,3 @@ class Booking(models.Model):
     def __str__(self):
         return self.booking_id
 
-
- 

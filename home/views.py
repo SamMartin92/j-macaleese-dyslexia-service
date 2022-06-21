@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def home_page(request):
-    return render(request, 'booking/index.html')
+    return render(request, 'home/index.html')

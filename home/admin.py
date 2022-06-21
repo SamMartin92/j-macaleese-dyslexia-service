@@ -4,4 +4,3 @@ from .models import Booking, Client
 # Register your models here.
 admin.site.register(Booking)
 admin.site.register(Client)
-
