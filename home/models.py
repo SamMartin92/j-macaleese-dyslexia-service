@@ -6,12 +6,12 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Client(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    phone = PhoneNumberField(null=False)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    phone = PhoneNumberField(null=False, blank=False)
     ## email should be here
-    is_guardian = models.BooleanField(default=False)
-    childs_name = models.CharField(max_length=50, null=True)
-    already_diagnosed = models.BooleanField(default=False)
+    is_guardian = models.BooleanField(default=False, null=False, blank=False)
+    childs_name = models.CharField(max_length=50)
+    already_diagnosed = models.BooleanField(default=False, null=False, blank=False)
 
 
     def __str__(self):
