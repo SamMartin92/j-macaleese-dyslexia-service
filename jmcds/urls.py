@@ -21,6 +21,6 @@ from home.views import home_page, client_details_form
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home_page'),
-    path('submit-details', client_details_form, name='client_details_form'),
+    path('submit-details/', client_details_form, name='client_details_form'),
     path('accounts/', include('allauth.urls')),
 ]
