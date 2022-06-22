@@ -9,7 +9,8 @@
 
 <form method="POST">
     {% csrf_token %}
-    <div class="mb-3">
+    {{ form.as_p }}
+    <!-- <div class="mb-3">
         <label for="client_name" class="form-label">Name</label>
         <input type="text" class="form-control" id="client_name" name="client_name">
     </div>
@@ -28,7 +29,7 @@
     <div class="mb-3 form-check">
         <label class="form-check-label" for="is_guardian">Please check box if you are already diagnosed</label>
         <input type="checkbox" class="form-check-input" id="is_guardian" name="is_guardian">
-    </div>
+    </div> -->
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
