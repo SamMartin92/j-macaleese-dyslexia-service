@@ -40,3 +40,4 @@
 ### Frameworks, Libraries & Programs Used
 
 - https://miniwebtool.com/django-secret-key-generator/
+- https://github.com/bitlabstudio/django-booking

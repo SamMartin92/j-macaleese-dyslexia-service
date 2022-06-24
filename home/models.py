@@ -21,11 +21,4 @@ class Client(models.Model):
 
 
 
-class Booking(models.Model):
-    booking_id = models.IntegerField()
-    #user_id = models.ForeignKey(Client, on_delete=models.CASCADE)
-
-
-    def __str__(self):
-        return self.booking_id
 
