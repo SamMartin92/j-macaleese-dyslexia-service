@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'django.contrib.staticfiles',
     'home',
-    'booking'
+    'booking',
 ]
 
 SITE_ID = 1

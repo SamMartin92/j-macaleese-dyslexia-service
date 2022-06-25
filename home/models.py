@@ -6,7 +6,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Client(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50, null=False, blank=False)
+    first_name = models.CharField(max_length=50, null=False, blank=False)
+    last_name = models.CharField(max_length=50, null=False, blank=False, default='')
     phone = PhoneNumberField(null=False, blank=False)
     ## email should be here
     is_guardian = models.BooleanField(default=False, null=False, blank=False)
@@ -15,7 +16,7 @@ class Client(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return f"{self.first_name} {self.last_name}"
     
 
 
