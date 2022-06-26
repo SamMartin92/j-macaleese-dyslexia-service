@@ -29,6 +29,11 @@ class Booking(models.Model):
     booking_date = models.DateField(blank=False, null=False, default=datetime.date.today)
     time_slot = models.CharField(max_length=20, blank=False, null=False, choices=TIME_SLOTS)
 
+    class Meta:
+        ordering = ['-booking_date', '-time_slot']
+        unique_together = ('booking_date', 'time_slot',)
+
     def __str__(self):
         return f"{self.client} : {self.booking_date}, {self.time_slot}"
+    
     
