@@ -2,11 +2,11 @@ from django import forms
 from .models import Client
 from allauth.account.forms import SignupForm
 
-# class ClientDetailsForm(forms.ModelForm):
-#     class Meta:
-#         model = Client
-#         fields = ('first_name', 'last_name', 'phone', 'is_guardian', 'childs_name',
-#                   'already_diagnosed',)
+class ClientDetailsForm(forms.ModelForm):
+    class Meta:
+        model = Client
+        fields = ('phone', 'is_guardian', 'childs_name',
+                  'already_diagnosed',)
 
 class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=30, label='First Name')

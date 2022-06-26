@@ -17,7 +17,10 @@ class Client(models.Model):
 
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}"
+        if self.user.is_staff is True:
+            return f"{self.user.username}: Super User"
+        else:
+            return f"{self.user.first_name} {self.user.last_name}"
 
     @receiver(post_save, sender=User)
     def create_client(sender, instance, created, **kwargs):
