@@ -9,7 +9,6 @@ class Client(models.Model):
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False, default='')
     phone = PhoneNumberField(null=False, blank=False)
-    ## email should be here
     is_guardian = models.BooleanField(default=False, null=False, blank=False)
     childs_name = models.CharField(max_length=50)
     already_diagnosed = models.BooleanField(default=False, null=False, blank=False)
