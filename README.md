@@ -41,3 +41,9 @@
 
 - https://miniwebtool.com/django-secret-key-generator/
 - https://github.com/bitlabstudio/django-booking
+
+## Credits
+
+### Code
+- extinding user model https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
+- password logins not working when changed to email authentication required. got solution here https://stackoverflow.com/questions/27967319/django-allauth-email-login-always-wrong
