@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 ACCOUNT_FORMS = {
-'signup': 'home.forms.CustomSignupForm',
+    'signup': 'home.forms.CustomSignupForm',
 }
 
 LOGIN_REDIRECT_URL ='/'

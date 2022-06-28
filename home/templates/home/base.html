@@ -68,7 +68,7 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                            <span>(Logged in as {{ user.username }})</span>
+                            <span>(Logged in as {{ user.email }})</span>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'make_booking' %}">Make Booking</a>

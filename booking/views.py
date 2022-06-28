@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import Booking
 from .forms import BookingForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 def booking_form(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
-        client=request.client
+        user = request.user
         if form.is_valid():
             new_booking = form.save(commit=False)
-            new_booking.client = request.client
+            new_client.user = request.user
             new_booking.save()
             return redirect('home_page')
     form = BookingForm()
