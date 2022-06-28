@@ -1,0 +1,19 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<ul>
+    {% for booking in bookings %}
+    <li>
+        {{ booking.class_type }} {{ booking.booking_type }}
+        {{ booking.booking_date }} {{ booking.time_slot }}    
+    </li>
+</ul>
+    {% empty %}
+    <p>You currently have no bookings. Would you like to book a class?</p>
+    <button class="btn btn-warning"><a href= "{% url 'get_bookings' %}">Make a booking</a> </button>
+    {% endfor %}
+
+
+{% endblock %}

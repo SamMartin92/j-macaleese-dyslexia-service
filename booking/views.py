@@ -10,7 +10,7 @@ def booking_form(request):
         user = request.user
         if form.is_valid():
             new_booking = form.save(commit=False)
-            new_client.user = request.user
+            new_booking.user = request.user
             new_booking.save()
             return redirect('home_page')
     form = BookingForm()
@@ -19,3 +19,13 @@ def booking_form(request):
     }
 
     return render(request, 'booking/make_booking.html', context)
+
+
+def get_bookings(request):
+    user = request.user
+    bookings = Booking.objects.filter(user=user)
+    #user_bookings = bookings.
+    context = {
+        'bookings': bookings
+    }
+    return render(request, 'booking/view_bookings.html', context)
