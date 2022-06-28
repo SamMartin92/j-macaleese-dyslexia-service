@@ -3,17 +3,31 @@
 
 {% block content %}
 
-<ul>
+<table>
     {% for booking in bookings %}
-    <li>
-        {{ booking.class_type }} {{ booking.booking_type }}
-        {{ booking.booking_date }} {{ booking.time_slot }}    
-    </li>
-</ul>
-    {% empty %}
-    <p>You currently have no bookings. Would you like to book a class?</p>
-    <button class="btn btn-warning"><a href= "{% url 'get_bookings' %}">Make a booking</a> </button>
-    {% endfor %}
+    <tr>
+        <td>
+            {{ booking.class_type }}
+        </td>
+        <td>
+            {{ booking.booking_type }}
+        </td>
+        <td>
+            {{ booking.booking_date }}
+        </td>
+        <td>
+            {{ booking.time_slot }}
+        </td>
+        <td>
+            <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
+            <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+        </td>
+    </tr>
+</table>
+{% empty %}
+<p>You currently have no bookings. Would you like to book a class?</p>
+<button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
+{% endfor %}
 
 
 {% endblock %}

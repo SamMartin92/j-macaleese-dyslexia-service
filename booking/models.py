@@ -29,7 +29,7 @@ class Booking(models.Model):
     time_slot = models.CharField(max_length=20, blank=False, null=False, choices=TIME_SLOTS)
 
     class Meta:
-        ordering = ['-booking_date', '-time_slot']
+        ordering = ['booking_date', 'time_slot']
         unique_together = ('booking_date', 'time_slot',)
 
     def __str__(self):

@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <h1><strong>This that EDIT booking form</strong></h1>
+</div>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Sumbmit Booking Modification</button>
+</form>
+
+{% endblock %}
