@@ -12,4 +12,13 @@
     <button type="submit" class="btn btn-primary">Sumbmit Booking Modification</button>
 </form>
 
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+        {% if "dup_booking" in message.tags %}
+            <li class= "{{ message.tags }}" >{{ message }}</li>
+        {% endif %}        
+    {% endfor %}
+</ul>
+{% endif %}
 {% endblock %}

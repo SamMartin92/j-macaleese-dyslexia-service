@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Booking
 from .forms import BookingForm
-from django.contrib.auth.models import User
+from django.db import IntegrityError
+from django.contrib import messages
+
 
 # Create your views here.
 def booking_form(request):
@@ -9,10 +11,15 @@ def booking_form(request):
         form = BookingForm(request.POST)
         user = request.user
         if form.is_valid():
-            new_booking = form.save(commit=False)
-            new_booking.user = request.user
-            new_booking.save()
-            return redirect('home_page')
+            try:
+                new_booking = form.save(commit=False)
+                new_booking.user = request.user
+                new_booking.save()
+                return redirect('get_bookings')
+            except IntegrityError:
+                messages.info(request, 'Time unavailable, please choose another time slot', extra_tags='dup_booking')
+                return redirect('make_booking')
+                  
     form = BookingForm()
     context = {
         'form': form
@@ -36,11 +43,14 @@ def edit_booking(request, booking_id):
         form = BookingForm(request.POST, instance=booking)
         user = request.user
         if form.is_valid():
-            print('form valid')
-            new_booking = form.save(commit=False)
-            new_booking.user = request.user
-            new_booking.save()
-            return redirect('home_page')
+            try:
+                new_booking = form.save(commit=False)
+                new_booking.user = request.user
+                new_booking.save()
+                return redirect('get_bookings')
+            except IntegrityError:
+                messages.info(request, 'Time unavailable, please choose another time slot', extra_tags='dup_booking')
+                
     form = BookingForm(instance=booking)
     context = {
         'form': form
