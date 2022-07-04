@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+import datetime
 from .models import Booking
 from .forms import BookingForm
 from django.db import IntegrityError
@@ -13,9 +14,12 @@ def booking_form(request):
         if form.is_valid():
             try:
                 new_booking = form.save(commit=False)
-                new_booking.user = request.user
-                new_booking.save()
-                return redirect('get_bookings')
+                if new_booking.booking_date == datetime.date.today():
+                    messages.info(request, 'Bookings must be made at least 1 day in advance, please select another date', extra_tags='same_day_booking')
+                else:
+                    new_booking.user = request.user
+                    new_booking.save()
+                    return redirect('get_bookings')
             except IntegrityError:
                 messages.info(request, 'Time unavailable, please choose another time slot', extra_tags='dup_booking')
                 return redirect('make_booking')
@@ -45,9 +49,12 @@ def edit_booking(request, booking_id):
         if form.is_valid():
             try:
                 new_booking = form.save(commit=False)
-                new_booking.user = request.user
-                new_booking.save()
-                return redirect('get_bookings')
+                if new_booking.booking_date == datetime.date.today():
+                    messages.info(request, 'Bookins must be made at least 1 day in advance, please select another date', extra_tags='same_day_booking')
+                else:
+                    new_booking.user = request.user
+                    new_booking.save()
+                    return redirect('get_bookings')
             except IntegrityError:
                 messages.info(request, 'Time unavailable, please choose another time slot', extra_tags='dup_booking')
                 

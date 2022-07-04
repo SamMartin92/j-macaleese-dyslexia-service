@@ -5,6 +5,32 @@
 
 <table>
     {% for booking in bookings %}
+    {% if booking.status == 1 %}
+    <th>
+        Upcoming Bookings
+    </th>
+    <tr>
+        <td>
+            {{ booking.class_type }}
+        </td>
+        <td>
+            {{ booking.booking_type }}
+        </td>
+        <td>
+            {{ booking.booking_date }}
+        </td>
+        <td>
+            {{ booking.time_slot }}
+        </td>
+        <td>
+            <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
+            <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+        </td>
+    
+    {% elif booking.status == 0 %}
+    <th>
+        Pending Bookings
+    </th>
     <tr>
         <td>
             {{ booking.class_type }}
@@ -23,10 +49,34 @@
             <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
         </td>
     </tr>
+    {% elif booking.status == 3 %}
+    <th>
+        Past Bookings
+    </th>
+    <tr>
+        <td>
+            {{ booking.class_type }}
+        </td>
+        <td>
+            {{ booking.booking_type }}
+        </td>
+        <td>
+            {{ booking.booking_date }}
+        </td>
+        <td>
+            {{ booking.time_slot }}
+        </td>
+        <td>
+            <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
+            <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+        </td>
 </table>
+{% endif %}
 {% empty %}
 <p>You currently have no bookings. Would you like to book a class?</p>
 <button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
+
+
 {% endfor %}
 
 

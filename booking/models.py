@@ -21,6 +21,9 @@ TIME_SLOTS = (
     ('20:00', '20:00'),
 )
 
+STATUS = ((0, "Pending"), (1, "Accepted"), (2, "Declined"), (3, "Completed"))
+
+
 class Booking(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -28,6 +31,8 @@ class Booking(models.Model):
     booking_type = models.CharField(max_length=20, choices=BOOKING_TYPE, blank=False, null=False)
     booking_date = models.DateField(blank=False, null=False, default=datetime.date.today)
     time_slot = models.CharField(max_length=20, blank=False, null=False, choices=TIME_SLOTS)
+    status = models.IntegerField(choices=STATUS, default=0)
+    notes = models.TextField(blank=True, null=True)
 
     class Meta:
         ordering = ['booking_date', 'time_slot']
