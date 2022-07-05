@@ -35,6 +35,11 @@ def booking_form(request):
 def get_bookings(request):
     user = request.user
     bookings = Booking.objects.filter(user=user)
+    upcomingbookings = []
+    for booking in bookings:
+        if booking.status == 0 or 1:
+            upcomingbookings.append(booking)
+            
     context = {
         'bookings': bookings
     }

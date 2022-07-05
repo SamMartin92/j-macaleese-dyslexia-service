@@ -66,16 +66,13 @@
         <td>
             {{ booking.time_slot }}
         </td>
-        <td>
-            <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
-            <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
-        </td>
 </table>
 {% endif %}
-{% empty %}
-<p>You currently have no bookings. Would you like to book a class?</p>
-<button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
 
+{% if empty or upcomingbookings is empty %}
+<p>You currently have no upcoming bookings. Would you like to book a class?</p>
+<button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
+{% endif %}
 
 {% endfor %}
 
