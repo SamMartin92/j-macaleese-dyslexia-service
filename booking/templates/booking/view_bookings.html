@@ -24,10 +24,30 @@
         </td>
         <td>
             <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
-            <!-- <button class="btn btn-warning" data-bs-target="#delete-modal">Cancel booking</button> -->
-            <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete_modal{{ booking.id }}">
+                Cancel Booking
+              </button>
+            <!-- <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button> -->
         </td>
     
+        <div class="modal fade" id="delete_modal{{ booking.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to cancel this booking?
+                  <p>---booking deets--</p> 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
     {% elif booking.status == 0 %}
     <th>
         Pending Bookings
@@ -47,9 +67,31 @@
         </td>
         <td>
             <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
-            <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete_modal{{ booking.id }}">
+                Cancel Booking
+              </button>
+            <!-- <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button> -->
         </td>
     </tr>
+
+    <div class="modal fade" id="delete_modal{{ booking.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to cancel this booking?
+              <p>---booking deets--</p> 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
     {% elif booking.status == 3 %}
     <th>
         Past Bookings
@@ -74,7 +116,11 @@
 {% if not upcomingbookings %}
 <p>You currently have no upcoming bookings. Would you like to book a class?</p>
 <button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
+
+
 {% endif %}
+
+
 
 
 

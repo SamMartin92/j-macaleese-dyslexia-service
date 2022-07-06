@@ -42,7 +42,8 @@ def get_bookings(request):
     print(upcomingbookings)
             
     context = {
-        'bookings': bookings
+        'bookings': bookings,
+        'upcomingbookings': upcomingbookings
     }
     return render(request, 'booking/view_bookings.html', context)
 
