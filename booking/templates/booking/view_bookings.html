@@ -24,6 +24,7 @@
         </td>
         <td>
             <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
+            <!-- <button class="btn btn-warning" data-bs-target="#delete-modal">Cancel booking</button> -->
             <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
         </td>
     
@@ -68,13 +69,14 @@
         </td>
 </table>
 {% endif %}
+{% endfor %}
 
-{% if empty or upcomingbookings is empty %}
+{% if not upcomingbookings %}
 <p>You currently have no upcoming bookings. Would you like to book a class?</p>
 <button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
 {% endif %}
 
-{% endfor %}
+
 
 
 {% endblock %}

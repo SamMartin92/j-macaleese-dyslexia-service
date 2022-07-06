@@ -16,9 +16,9 @@
 <ul class="messages">
     {% for message in messages %}
         {% if "dup_booking" in message.tags %}
-            <li class= "{{ message.tags }}" >{{ message }}</li>
+            <li class= "{{ message.tags }}" >{{ message | safe }}</li>
         {% elif "same_day_booking" in message.tags %}
-            <li class= "{{ message.tags }}" >{{ message }}</li>
+            <li class= "{{ message.tags }}" >{{ message | safe }}</li>
         {% endif %}        
     {% endfor %}
 </ul>
