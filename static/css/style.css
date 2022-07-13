@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*------Nav----*/
+
+.nav-row{
+    width: 100%;
+}
+
+.navbar-collapse{
+    flex-grow: 0;
+}
