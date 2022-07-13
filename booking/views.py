@@ -1,12 +1,14 @@
-from django.shortcuts import render, redirect, get_object_or_404
 import datetime
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Booking
 from .forms import BookingForm
 from django.db import IntegrityError
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def booking_form(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -31,7 +33,7 @@ def booking_form(request):
 
     return render(request, 'booking/make_booking.html', context)
 
-
+@login_required
 def get_bookings(request):
     user = request.user
     bookings = Booking.objects.filter(user=user)
@@ -47,7 +49,7 @@ def get_bookings(request):
     }
     return render(request, 'booking/view_bookings.html', context)
 
-
+@login_required
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == 'POST':
