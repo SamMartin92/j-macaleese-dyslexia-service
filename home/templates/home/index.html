@@ -1,13 +1,26 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+
 {% block title %}
-  Home
+Home
 {% endblock %}
+
+{% block extrajs %}
+
+{% endblock %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("Hd3kDcWXoTUyVhO8I");
+    // emailjs.send("service_f794snj", "template_o5n61zc", templateParams, "Hd3kDcWXoTUyVhO8I");
+  })();
+</script>
 
 {% block content %}
 <!--https://getbootstrap.com/docs/5.2/examples/heroes/ responsive left aligned-->
-<div class="container col-xxl-8 px-4 py-5">
+<section class="container col-xxl-8 px-4 py-5">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
       <img src="{% static '/images/hero-profile-image.jpg' %}" class="d-block mx-lg-auto img-fluid"
@@ -25,12 +38,12 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Subtitle section to go inhere with generic dyslexia pic from free site -->
 
 <!-- https://getbootstrap.com/docs/5.2/examples/features/ -->
-<div class="container px-4 py-5" id="featured-3">
+<section class="container px-4 py-5" id="featured-3">
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     <div class="feature col">
       <div class="feature-icon mb-3">
@@ -82,7 +95,23 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-
+<section class="container-fluid">
+  <div class="row bg-color-contact">
+      <div>
+          <h3 class="contact-heading uppercase text-center">Got a project in mind?</h3>
+          <h5 class="uppercase text-center">Let's work together</h5>
+      </div>
+      <div class="center-form">
+          <form onsubmit="return sendMail(this);">
+              <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+              <input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+              <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone No." />
+              <textarea rows="5" name="message" class="form-control" id="message" placeholder="Please type your message here" required></textarea>
+              <button type="submit" class="btn btn-secondary center-block">Send Query</button>
+          </form>
+      </div>
+  </div>
+</section>
 {% endblock %}

@@ -24,7 +24,11 @@
     </script>
     {% endblock %}
 
+   
+
     <title>JMCDS | {% block title %}{% endblock %}</title>
+
+    {% block extrajs %}{% endblock %}
 </head>
 
 <body>
@@ -103,7 +107,7 @@
 
     {% block postloadjs %}
     <script src="https://kit.fontawesome.com/8fe2541de2.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     {% endblock %}
 </body>
 
