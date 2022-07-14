@@ -2,6 +2,13 @@
     margin: 0;
     padding: 0;
 }
+
+/*----Gen Rules--*/
+
+.justify-center{
+    justify-content: center;
+}
+
 /*------Nav----*/
 
 .nav-row{
@@ -10,4 +17,18 @@
 
 .navbar-collapse{
     flex-grow: 0;
+}
+
+/*-----Features--*/
+.feature-text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.feature-icon{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
 }
