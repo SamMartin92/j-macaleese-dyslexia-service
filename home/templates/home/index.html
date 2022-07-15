@@ -7,16 +7,18 @@ Home
 {% endblock %}
 
 {% block extrajs %}
-
-{% endblock %}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
 <script type="text/javascript">
-  (function () {
-    emailjs.init("Hd3kDcWXoTUyVhO8I");
-    // emailjs.send("service_f794snj", "template_o5n61zc", templateParams, "Hd3kDcWXoTUyVhO8I");
-  })();
+   (function(){
+      emailjs.init("Hd3kDcWXoTUyVhO8I");
+   })();
+   
 </script>
+
+{% endblock %}
+
 
 {% block content %}
 <!--https://getbootstrap.com/docs/5.2/examples/heroes/ responsive left aligned-->
@@ -106,7 +108,7 @@ Home
       <div class="center-form">
           <form onsubmit="return sendMail(this);">
               <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
-              <input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+              <input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/> 
               <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone No." />
               <textarea rows="5" name="message" class="form-control" id="message" placeholder="Please type your message here" required></textarea>
               <button type="submit" class="btn btn-secondary center-block">Send Query</button>
