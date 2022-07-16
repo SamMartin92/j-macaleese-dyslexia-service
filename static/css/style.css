@@ -12,6 +12,9 @@
     justify-content: center;
 }
 
+.left-align{
+    text-align: left;
+}
 /*------Nav----*/
 
 .nav-row{
@@ -20,6 +23,83 @@
 
 .navbar-collapse{
     flex-grow: 0;
+}
+
+
+/*-----Footer----*/
+
+.footer-container {
+    --bs-gutter-x: 0;
+}
+
+footer {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
+
+footer a:hover {
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: underline;
+}
+
+.footer-logo {
+    /* color: rgba(255, 255, 255, 0.75); */
+    margin-left: 25px;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.align-items-center {
+    text-align: center;
+}
+
+.team-link {
+    font-size: 25px;
+    padding: 15px;
+}
+
+.footer-ul {
+    display: list-item;
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-ul > li {
+    display: flex;
+}
+
+li > i {
+    margin-right: 15px;
+}
+
+
+
+@media only screen and (max-width: 575px) {
+    footer {
+        height: auto;
+        display: block;
+        text-align: center;
+    }
+
+    .footer-ul {
+        line-height: 2em;
+    }
+
+    .footer-ul > li {
+        display: flex;
+        justify-content: center;
+    }
+    .left-align {
+        text-align: center;
+    }
+
 }
 
 /*-----Features--*/
