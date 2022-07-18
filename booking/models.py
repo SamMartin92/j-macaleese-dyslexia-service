@@ -35,7 +35,7 @@ class Booking(models.Model):
     notes = models.TextField(blank=True, null=True)
 
     class Meta:
-        ordering = ['booking_date', 'time_slot']
+        ordering = ['status','booking_date', 'time_slot']
         UniqueConstraint(fields=['booking_date', 'time_slot'], name='unique_time_slot')
 
     def __str__(self):
