@@ -29,7 +29,7 @@
 
           {{ booking.time_slot }}
         </div>
-        <div>
+        <div class ="booking-btns">
           <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal"
             data-bs-target="#delete_modal{{ booking.id }}">
@@ -80,7 +80,7 @@
   
             {{ booking.time_slot }}
           </div>
-          <div>
+          <div class ="booking-btns">
             <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
               data-bs-target="#delete_modal{{ booking.id }}">

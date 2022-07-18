@@ -25,7 +25,7 @@ Home
 <section class="container col-xxl-8 px-4 py-5">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
-      <img src="{% static '/images/hero-profile-image.jpg' %}" class="d-block mx-lg-auto img-fluid"
+      <img src="{% static '/images/glasses-on-book.jpg' %}" class="d-block mx-lg-auto img-fluid"
         alt="Bootstrap Themes" width="700" height="500" loading="lazy">
     </div>
     <div class="col-lg-6">
@@ -43,7 +43,21 @@ Home
 </section>
 
 <!-- Subtitle section to go inhere with generic dyslexia pic from free site -->
-
+<section>
+  <div class="container px-5">
+      <div class="row gx-5 align-items-center">
+          <div class="col-lg-6">
+              <div class="p-5"><img class="img-fluid rounded-circle profile-img" src="{% static '/images/hero-profile-image.jpg' %}" alt="..."></div>
+          </div>
+          <div class="col-lg-6">
+              <div class="p-5">
+                  <h2 class="display-4">Here to help !</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 <!-- https://getbootstrap.com/docs/5.2/examples/features/ -->
 <section class="container px-4 py-5" id="featured-3">
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
@@ -99,19 +113,19 @@ Home
   </div>
 </section>
 
-<section class="container-fluid">
+<section class="container form-container">
   <div class="row bg-color-contact">
       <div>
           <h3 class="contact-heading uppercase text-center">Got a project in mind?</h3>
           <h5 class="uppercase text-center">Let's work together</h5>
       </div>
-      <div id = "contact-form" class="center-form">
-          <form onsubmit="return sendMail(this);">
+      <div id ="contact-form" class="center-form">
+          <form class="contact-form" onsubmit="return sendMail(this);">
               <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
               <input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/> 
               <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone No." />
               <textarea rows="5" name="message" class="form-control" id="message" placeholder="Please type your message here" required></textarea>
-              <button type="submit" class="btn btn-secondary center-block">Send Query</button>
+              <button type="submit" class="btn btn-info btn-lg center-block">Send Query</button>
           </form>
       </div>
       <div id="success-message" class="hidden">

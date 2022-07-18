@@ -109,6 +109,13 @@ li>i {
 
 }
 
+/*----Profile section--*/
+
+.profile-img{
+    max-height: 300px;
+}
+
+
 /*-----Features--*/
 .feature-text {
     display: flex;
@@ -123,7 +130,20 @@ li>i {
     font-size: 35px;
 }
 
+/*---Contact Form---*/
+.form-container{
+    margin-bottom: 50px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.contact-form > button {
+    margin: 10px;
+    font-weight: 600;
+}
 
 /*-----View bookings--*/
 
@@ -145,4 +165,8 @@ li>i {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.booking-btns{
+    margin: 10px;
 }
