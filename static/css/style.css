@@ -1,27 +1,33 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 /*----Gen Rules--*/
-.hidden{
+.hidden {
     display: none;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center;
 }
 
-.left-align{
+.left-align {
     text-align: left;
 }
+
 /*------Nav----*/
 
-.nav-row{
+.nav-row {
     width: 100%;
+    align-items: center;
 }
 
-.navbar-collapse{
+.navbar-toggler {
+    float: left;
+}
+
+.navbar-collapse {
     flex-grow: 0;
 }
 
@@ -71,11 +77,11 @@ footer a:hover {
     padding: 0;
 }
 
-.footer-ul > li {
+.footer-ul>li {
     display: flex;
 }
 
-li > i {
+li>i {
     margin-right: 15px;
 }
 
@@ -92,10 +98,11 @@ li > i {
         line-height: 2em;
     }
 
-    .footer-ul > li {
+    .footer-ul>li {
         display: flex;
         justify-content: center;
     }
+
     .left-align {
         text-align: center;
     }
@@ -103,15 +110,39 @@ li > i {
 }
 
 /*-----Features--*/
-.feature-text{
+.feature-text {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
 }
 
-.feature-icon{
+.feature-icon {
     display: flex;
     justify-content: center;
     font-size: 35px;
+}
+
+
+
+/*-----View bookings--*/
+
+.view-booking-section {
+    min-height: 75vh;
+    margin: 40px;
+}
+
+.view-booking-section > h4 {
+    text-align: center;
+    padding: 10px;
+}
+
+.view-booking-section > ul{
+    padding: 20px 0px 20px 0px;
+}
+
+.bookings-li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
