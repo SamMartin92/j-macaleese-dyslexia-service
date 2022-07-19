@@ -6,3 +6,4 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ('class_type', 'booking_type', 'booking_date',
                   'time_slot',)
+    

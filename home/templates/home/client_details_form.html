@@ -1,22 +1,30 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+{% block extracss %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+{% endblock %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+{% endblock %}
+
 {% block content %}
 
 <div>
     <h1><strong>This that client details form</strong></h1>
 </div>
 
-<form method="POST">
+<form method="POST" onsubmit="process(event)">
     {% csrf_token %}
-    {{ form.as_p }}
+    <!-- {{ form.as_p }} -->
     <!-- <div class="mb-3">
         <label for="client_name" class="form-label">Name</label>
         <input type="text" class="form-control" id="client_name" name="client_name">
-    </div>
+    </div> -->
     <div class="mb-3">
         <label for="client_phone" class="form-label">Phone number</label>
-        <input type="tel" class="form-control" id="client_phone" name="client_phone">
+        <input type="tel" id="client_phone" name="client_phone">
     </div>
     <div class="mb-3 form-check">
         <label class="form-check-label" for="is_guardian">Please check box if you are the guardian of patient</label>
@@ -29,8 +37,19 @@
     <div class="mb-3 form-check">
         <label class="form-check-label" for="is_guardian">Please check box if you are already diagnosed</label>
         <input type="checkbox" class="form-check-input" id="is_guardian" name="is_guardian">
-    </div> -->
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+{% endblock %}
+
+{% block postloadjs %}
+<script>
+    const phoneInputField = document.querySelector("#client_phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        preferredCountries: ["ie", "gb",],
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
 {% endblock %}
