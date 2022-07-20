@@ -16,7 +16,7 @@ def booking_form(request):
         if form.is_valid():
             try:
                 new_booking = form.save(commit=False)
-                if new_booking.booking_date == datetime.date.today():
+                if new_booking.booking_date <= datetime.date.today():
                     messages.info(request, 'Bookings must be made at least 1 day in advance, please select another date', extra_tags='same_day_booking')
                 else:
                     new_booking.user = request.user
@@ -37,15 +37,25 @@ def booking_form(request):
 def get_bookings(request):
     user = request.user
     bookings = Booking.objects.filter(user=user)
-    upcomingbookings = []
+    upcoming_bookings = []
+    pending_bookings = []
+    confirmed_bookings = []
+    past_bookings = []
     for booking in bookings:
         if booking.status <= 1:
-            upcomingbookings.append(booking)
-    print(upcomingbookings)
+            upcoming_bookings.append(booking)
+        if booking.status == 0:
+            pending_bookings.append(booking)
+        elif booking.status == 1:
+            confirmed_bookings.append(booking)
+        elif booking.status == 3:
+            past_bookings.append(booking)        
             
     context = {
-        'bookings': bookings,
-        'upcomingbookings': upcomingbookings
+        'upcoming_bookings': upcoming_bookings,
+        'pending_bookings': pending_bookings,
+        'confirmed_bookings' : confirmed_bookings,
+        'past_bookings': past_bookings
     }
     return render(request, 'booking/view_bookings.html', context)
 

@@ -27,7 +27,7 @@ STATUS = ((0, "Pending"), (1, "Accepted"), (2, "Declined"), (3, "Completed"))
 class Booking(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    class_type = models.CharField(max_length=20, choices=CLASS_TYPE, blank=False, null=False, default='', help_text="What type of session would you like book?")
+    class_type = models.CharField(max_length=20, choices=CLASS_TYPE, blank=False, null=False, default='')
     booking_type = models.CharField(max_length=20, choices=BOOKING_TYPE, blank=False, null=False)
     booking_date = models.DateField(blank=False, null=False, default=datetime.date.today)
     time_slot = models.CharField(max_length=20, blank=False, null=False, choices=TIME_SLOTS)
