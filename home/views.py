@@ -7,6 +7,10 @@ def home_page(request):
     return render(request, 'home/index.html')
 
 
+def services(request):
+    return render(request, 'home/services.html')
+
+
 def client_details_form(request):
     if request.method == 'POST':
         # form = ClientDetailsForm(request.POST)

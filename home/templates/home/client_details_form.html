@@ -9,38 +9,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 {% endblock %}
 
+{% block title %}Details{% endblock %}
+
 {% block content %}
 
 <section class="main-section">
-    <div class="client-details-head">
-        <h1><strong>Welcome to JM Dyslexia Services</strong></h1>
-        <p>Thank you for registering. Please provide a few extra details so we can best serve you.</p>
-    </div>
+    <div class="client-details-div">
+        <div class="client-details-head">
+            <h1><strong>Welcome to JM Dyslexia Services</strong></h1>
+            <p>Thank you for registering. Please provide a few extra details so we can best serve you.</p>
+        </div>
 
-    <div class="client-details-form">
-        <form method="POST" onsubmit="process(event)">
-            {% csrf_token %}
-            <div class="mb-3 form-phone-div">
-                <label for="client_phone" class="form-label">Phone number</label>
-                <input type="tel" class="form-control" id="client_phone" name="client_phone" placeholder="8X XXX XXXX">
-            </div>
-            <div class="mb-3 form-check">
-                <label class="form-check-label" for="is_guardian">Please check box if you are the guardian of
-                    patient</label>
-                <input type="checkbox" id="is_guardian" name="is_guardian">
-            </div>
-            <div class="mb-3">
-                <label for="childs_name" class="form-label">Child's name:</label>
-                <input type="text" class="form-control form-child-name-input" id="childs_name" name="childs_name" 
-                placeholder="Please enter child's name" disabled>
-            </div>
-            <div class="mb-3 form-check">
-                <label class="form-check-label" for="already_diagnosed">Please check box if you are already diagnosed</label>
-                <input type="checkbox" id="already_diagnosed" name="already_diagnosed">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div> 
+        <div class="client-details-form">
+            <form method="POST" onsubmit="process(event)">
+                {% csrf_token %}
+                <div class="mb-3 form-phone-div">
+                    <label for="client_phone" class="form-label">Phone number</label>
+                    <input type="tel" class="form-control" id="client_phone" name="client_phone"
+                        placeholder="8X XXX XXXX">
+                </div>
+                <div class="mb-3 form-check">
+                    <label class="form-check-label" for="is_guardian">Please check box if you are the guardian of
+                        patient</label>
+                    <input type="checkbox" id="is_guardian" name="is_guardian">
+                </div>
+                <div class="mb-3">
+                    <label for="childs_name" class="form-label">Child's name:</label>
+                    <input type="text" class="form-control form-child-name-input" id="childs_name" name="childs_name"
+                        placeholder="Please enter child's name" disabled>
+                </div>
+                <div class="mb-3 form-check">
+                    <label class="form-check-label" for="already_diagnosed">Please check box if you are already
+                        diagnosed</label>
+                    <input type="checkbox" id="already_diagnosed" name="already_diagnosed">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 </section>
 {% endblock %}
 

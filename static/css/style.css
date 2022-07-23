@@ -18,7 +18,9 @@
 
 .main-section{
     min-height: 75vh;
-    margin: 40px
+    margin: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 575px) {

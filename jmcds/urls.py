@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from home.views import home_page, client_details_form
+from home.views import home_page, client_details_form, services
 from booking import views
 
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home_page'),
     path('submit-details/', client_details_form, name='client_details_form'),
+    path('services/', services, name='services'),
     path('make_booking/', views.booking_form, name='make_booking'),
     path('view_bookings/', views.get_bookings, name='get_bookings'),
     path('edit_booking/<booking_id>', views.edit_booking, name='edit_booking'),
