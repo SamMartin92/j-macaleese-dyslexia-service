@@ -16,14 +16,79 @@
   <div class="bookings-div">
 
     {% if confirmed_bookings %}
+    <div class="bookings-sub-div">
+      <h4>
+        Upcoming Bookings
+      </h4>
+      <hr>
+      <div class="booking-ul">
+        <ul>
+          {% for booking in confirmed_bookings %}
+          <li>
+            <div class="bookings-li">
+              <div>
+                {{ booking.class_type }}
 
+                {{ booking.booking_type }}
+
+                {{ booking.booking_date }}
+
+                {{ booking.time_slot }}
+              </div>
+
+              <div class="booking-btns">
+                <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#delete_modal{{ booking.id }}">
+                  Cancel Booking
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <div class="modal fade" id="delete_modal{{ booking.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLabel">Confirmation required</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h5>Are you sure you want to cancel this booking?</h5>
+                  <p>Class : {{booking.class_type}} ({{ booking.booking_type }})</p>
+                  <p>Date : {{booking.booking_date}}</p>
+                  <p>Time : {{booking.time_slot}}</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    {% endfor %}
+    </ul>
+  </div>
+
+
+
+  {% else %}
+
+  {% endif %}
+
+
+  {% if pending_bookings %}
+  <div class="bookings-sub-div">
     <h4>
-      Upcoming Bookings
+      Pending Bookings
     </h4>
-
+    <hr>
     <div class="booking-ul">
       <ul>
-        {% for booking in confirmed_bookings %}
+        {% for booking in pending_bookings %}
         <li>
           <div class="bookings-li">
             <div>
@@ -35,7 +100,6 @@
 
               {{ booking.time_slot }}
             </div>
-
             <div class="booking-btns">
               <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -60,80 +124,16 @@
                 <p>Date : {{booking.booking_date}}</p>
                 <p>Time : {{booking.time_slot}}</p>
               </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+              </div>
             </div>
           </div>
         </div>
+        {% endfor %}
+      </ul>
     </div>
-    {% endfor %}
-    </ul>
-  </div>
-
-
-
-  {% else %}
-
-  {% endif %}
-
-
-  {% if pending_bookings %}
-
-  <h4>
-    Pending Bookings
-  </h4>
-
-
-
-  <div class="booking-ul">
-    <ul>
-      {% for booking in pending_bookings %}
-      <li>
-        <div class="bookings-li">
-          <div>
-            {{ booking.class_type }}
-
-            {{ booking.booking_type }}
-
-            {{ booking.booking_date }}
-
-            {{ booking.time_slot }}
-          </div>
-          <div class="booking-btns">
-            <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-              data-bs-target="#delete_modal{{ booking.id }}">
-              Cancel Booking
-            </button>
-          </div>
-        </div>
-      </li>
-
-      <div class="modal fade" id="delete_modal{{ booking.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">Confirmation required</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <h5>Are you sure you want to cancel this booking?</h5>
-              <p>Class : {{booking.class_type}} ({{ booking.booking_type }})</p>
-              <p>Date : {{booking.booking_date}}</p>
-              <p>Time : {{booking.time_slot}}</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </ul>
   </div>
 
 
@@ -144,55 +144,57 @@
   {% endif %}
 
   {% if past_bookings %}
-  <h4>
-    Past Bookings
-  </h4>
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h4 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          Past bookings
-        </button>
-      </h4>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-        data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="booking-ul">
-            <ul>
-              {% for booking in past_bookings %}
-              <li>
-                <div class="bookings-li">
-                  <div>
-                    {{ booking.class_type }}
+  <div class="bookings-sub-div">
+    <h4>
+      Past Bookings
+    </h4>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Past bookings
+          </button>
+        </h4>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="booking-ul">
+              <ul>
+                {% for booking in past_bookings %}
+                <li>
+                  <div class="bookings-li">
+                    <div>
+                      {{ booking.class_type }}
 
-                    {{ booking.booking_type }}
+                      {{ booking.booking_type }}
 
-                    {{ booking.booking_date }}
+                      {{ booking.booking_date }}
 
-                    {{ booking.time_slot }}
+                      {{ booking.time_slot }}
+                    </div>
                   </div>
-                </div>
-              </li>
-              {% endfor %}
-            </ul>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
+        {% else %}
+        {% endif %}
       </div>
-      {% else %}
+
+
+      {% if not upcoming_bookings %}
+
+      <div class="no-bookings-div">
+        <p>You currently have no upcoming bookings. Would you like to book a class?</p>
+        <button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
+      </div>
+
+
       {% endif %}
     </div>
-
-
-    {% if not upcoming_bookings %}
-
-    <div class="no-bookings-div">
-      <p>You currently have no upcoming bookings. Would you like to book a class?</p>
-      <button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
-    </div>
-
-
-    {% endif %}
   </div>
 </section>
 

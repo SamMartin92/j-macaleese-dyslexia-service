@@ -158,29 +158,26 @@ li>i {
 }
 
 /*-----View bookings--*/
-
-.view-booking-section {
-    min-height: 75vh;
-    margin: 40px;
+.bookings-sub-div{
+    border: 1px solid black;
+    margin: 15px 0;
 }
 
-.view-booking-section > h4 {
+.bookings-sub-div > h4 {
     text-align: center;
     padding: 10px;
 }
 
 .booking-ul {
-    background-color: aqua;
-}
-
-.view-booking-section > ul{
     padding: 20px 0px 20px 0px;
 }
+
 
 .bookings-li {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
 }
 
 .no-bookings-div{
