@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="off-black">
         <!---nav from bootstrap and edited with stackblitz-->
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
@@ -54,7 +54,7 @@
                                     Services
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Dyslexia Screening</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'services' %}">Dyslexia Screening</a></li>
                                     <li><a class="dropdown-item" href="#">Intervention Classes</a></li>
                                     <li>
                                         <hr class="dropdown-divider" />
@@ -105,7 +105,7 @@
 
     {% endblock %}
 
-    <section class="container-fluid footer-container">
+    <section class="container-fluid footer-container off-black">
         <footer class="align-items-center py-3">
             <div class="col-md-4 align-items-center footer-logo">
                 Logo ©

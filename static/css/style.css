@@ -29,6 +29,53 @@
     }
 
 }
+
+/*----Colours---*/
+
+.orange{
+    color: #fca253;
+}
+
+.light-orange{
+    color: #fca961;
+}
+
+.navy-blue{
+    color: #4460aa
+}
+
+.dark-green{
+    color: #206755
+}
+
+.light-green{
+    color: #329199
+}
+
+.off-black{
+    color: #2c3e50
+}
+
+.bg-orange{
+    background-color: #fca253;
+}
+
+.bg-light-orange{
+    background-color: #fca961;
+}
+
+.bg-navy-blue{
+    background-color: #4460aa
+}
+
+.bg-dark-green{
+    background-color: #206755
+}
+
+.bg-light-green{
+    background-color: #329199
+}
+
 /*------Nav----*/
 
 .nav-row {
