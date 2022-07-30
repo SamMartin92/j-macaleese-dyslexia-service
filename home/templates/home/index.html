@@ -27,8 +27,7 @@ Home
 {% if request.user.is_authenticated and not client %}
 
 <div class="alert alert-warning" role="alert">
-  A simple warning alert with <span data-bs-toggle="modal" data-bs-target="#clientDetailsModal">an example link</span>. Give
-  it a click if you like.
+  Hi {{ user.first_name }}, we require some more details to best serve you. Please submit <span class="alert-link" data-bs-toggle="modal" data-bs-target="#clientDetailsModal">here</span>. 
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 

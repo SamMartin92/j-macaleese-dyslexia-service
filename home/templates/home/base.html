@@ -37,7 +37,7 @@
         <nav class="navbar navbar-expand-md bg-light">
             <div class="container">
                 <div class="row nav-row">
-                    <div class="col-12 offset-3 offset-md-0 col-sm-3 nav-logo">
+                    <div class="col-sm-9 offset-3 offset-md-0 col-md-3 nav-logo">
                         <a class="navbar-brand" href="{% url 'home_page' %}">Logo</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target=".navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -49,8 +49,8 @@
                     <div class="col-6 collapse navbar-collapse navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{% url 'services' %}" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="{% url 'services' %}" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Services
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -84,7 +84,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                                <span>(Logged in as {{ user.email }})</span>
+                                <!-- <span>(Logged in as {{ user.email }})</span> -->
                             </li>
                             {% else %}
                             <li class="nav-item">

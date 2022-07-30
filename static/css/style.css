@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    /* background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important; */
 }
 
 /*----Gen Rules--*/
@@ -10,6 +13,10 @@
 
 .justify-center {
     justify-content: center;
+}
+
+.align-items-center {
+    text-align: center;
 }
 
 .left-align {
@@ -79,9 +86,13 @@
 
 /*------Nav----*/
 
+.nav-contain {
+    display: inline-block;
+}
+
 .nav-row {
-    width: 100%;
     align-items: center;
+    width: 100%;
 }
 
 .navbar-toggler {
@@ -92,6 +103,12 @@
     flex-grow: 0;
 }
 
+@media only screen and (max-width: 575px) {
+    .nav-row{
+        width: auto;
+    }
+
+}
 
 /*-----Footer----*/
 
@@ -106,6 +123,10 @@ footer {
     display: flex;
 }
 
+footer > div{
+    width: 33%;
+}
+
 footer a {
     text-decoration: none;
     color: rgba(0, 0, 0, 1);
@@ -117,13 +138,8 @@ footer a:hover {
 }
 
 .footer-logo {
-    margin-left: 25px;
     font-size: 25px;
     padding: 15px;
-}
-
-.align-items-center {
-    text-align: center;
 }
 
 .team-link {
@@ -135,6 +151,10 @@ footer a:hover {
     display: list-item;
     list-style-type: none;
     padding: 0;
+}
+
+.contact-div{
+    flex: none;
 }
 
 .footer-ul>li {
@@ -167,7 +187,13 @@ li>i {
         text-align: center;
     }
 
+    footer > div{
+        width: auto;
+    }
+
 }
+
+
 
 /*----Profile section--*/
 
