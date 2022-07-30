@@ -13,7 +13,7 @@ def services(request):
 
 def client_details_form(request):
     if request.method == 'POST':
-        # form = ClientDetailsForm(request.POST)
+        form = ClientDetailsForm(request.POST)
         # user = request.user
         # if form.is_valid():
         #     new_client = form.save(commit=False)
@@ -29,9 +29,9 @@ def client_details_form(request):
                                     already_diagnosed=already_diagnosed)
         
         return redirect('home_page')
-    # form = ClientDetailsForm()
-    # context = {
-    #     'form': form
-    # }
+    form = ClientDetailsForm()
+    context = {
+        'form': form
+    }
 
     return render(request, 'home/client_details_form.html')
