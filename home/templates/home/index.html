@@ -26,9 +26,9 @@ Home
 
 {% if request.user.is_authenticated and not client %}
 
-<div class="alert alert-warning" role="alert">
-  Hi {{ user.first_name }}, we require some more details to best serve you. Please submit <span class="alert-link" data-bs-toggle="modal" data-bs-target="#clientDetailsModal">here</span>. 
+<div class="alert alert-warning alert-div" role="alert">
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <p> Hi {{ user.first_name }}, we require some more details to best serve you. Please submit <span class="alert-link" data-bs-toggle="modal" data-bs-target="#clientDetailsModal">here</span>.</p>
 </div>
 
 <!-- Modal -->

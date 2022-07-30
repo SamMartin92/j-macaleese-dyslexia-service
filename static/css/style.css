@@ -95,6 +95,11 @@
     width: 100%;
 }
 
+.nav-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
 .navbar-toggler {
     float: left;
 }
@@ -193,8 +198,25 @@ li>i {
 
 }
 
+/*----Index----------*/
 
+.alert-div{
+    margin: 30px;
+}
 
+.alert-div > button {
+    float: right;
+}
+
+.alert-div > p {
+    margin-left: 50px;
+    padding: 0 10px;
+}
+
+.alert-div span {
+    text-decoration: underline;
+    cursor: pointer;
+}
 /*----Profile section--*/
 
 .profile-img {
@@ -216,6 +238,12 @@ li>i {
     font-size: 35px;
 }
 
+@media only screen and (max-width: 575px) {
+    .alert-div{
+        margin: 15px 0;
+    }
+
+}
 /*---Contact Form---*/
 .form-container {
     margin-bottom: 50px;
