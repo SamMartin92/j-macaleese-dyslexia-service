@@ -96,24 +96,31 @@
 }
 
 .nav-logo{
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
+
 }
 
 .navbar-toggler {
-    float: left;
+    float: right;
 }
 
 .navbar-collapse {
     flex-grow: 0;
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 768px) {
+    .navbar-brand{
+        margin-left: 33%;
+    }
+
+}
+/* @media only screen and (max-width: 575px) {
     .nav-row{
         width: auto;
     }
 
-}
+} */
 
 /*-----Footer----*/
 
