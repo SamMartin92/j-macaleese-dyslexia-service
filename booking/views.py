@@ -68,7 +68,7 @@ def edit_booking(request, booking_id):
         if form.is_valid():
             try:
                 new_booking = form.save(commit=False)
-                if new_booking.booking_date == datetime.date.today():
+                if new_booking.booking_date <= datetime.date.today():
                     messages.info(request, 'Bookings must be made at least 1 day in advance, please select another date', extra_tags='same_day_booking')
                 else:
                     new_booking.user = request.user

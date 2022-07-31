@@ -15,7 +15,7 @@
                 {{ form.as_p }}
             </div>
             <div class="booking-form-submit">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button type="button" id="booking-submit" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Sumbmit
                     Booking Modification</button>
             </div>
@@ -29,14 +29,16 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p>Thank you for submitting your booking request!</p>
-                            <p>Booking available to view in pending bookings. Please contact Jennie to us to arrange
+                            <p>Thank you for submitting your booking modification!</p>
+                            <p>Please note, if your booking was previously accepted, it is once again pending</p>
+                            <p>Please contact us to arrange
                                 payment if any payments or outstanding or your booking may not be accepted.</p>
                             <li class="ms-3"><i class="fa-solid fa-phone"> </i>+353 86 087 3335</li>
                             <li class="ms-3"><i class="fa-solid fa-envelope"> </i>jenniemcaleese@hotmail.com</li>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" id="close-modal-btn" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">I understand</button>
                         </div>
                     </div>
