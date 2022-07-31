@@ -309,6 +309,10 @@ li>i {
     padding: 10px;
 }
 
+.popover-q{
+    font-size: small;
+}
+
 .booking-ul {
     padding: 20px 0px 20px 0px;
 }

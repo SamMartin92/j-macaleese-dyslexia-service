@@ -84,8 +84,11 @@
     {% if pending_bookings %}
     <div class="bookings-sub-div">
       <h4>
-        Pending Bookings
+        Pending Bookings <i class="fa-regular fa-circle-question popover-q" tabindex="0" class="btn btn-lg btn-danger"
+          role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Pending bookings"
+          data-bs-content="Booking still pending. Once confirmed, it will be shown in your upcoming bookings."></i>
       </h4>
+
       <hr>
       <div class="booking-ul">
         <ul>
@@ -205,4 +208,13 @@
 
 
 
+{% endblock %}
+{% block postloadjs %}
+<script>
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+  const popover = new bootstrap.Popover('.popover-dismiss', {
+    trigger: 'focus'
+  })
+</script>
 {% endblock %}

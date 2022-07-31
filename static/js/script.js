@@ -6,10 +6,10 @@ const bookingSubmit = document.getElementById("booking-submit")
 
 
 
-// guardianCheckBox.addEventListener("click", function () {
-//     let childNameInput = document.getElementById("childs_name");
-//     childNameInput.toggleAttribute("disabled");
-// });
+guardianCheckBox.addEventListener("click", function () {
+    let childNameInput = document.getElementById("childs_name");
+    childNameInput.toggleAttribute("disabled");
+});
 
 
 bookingSubmit.addEventListener("click", function () {
