@@ -95,7 +95,7 @@
     width: 100%;
 }
 
-.nav-logo{
+.nav-logo {
     /* display: flex;
     justify-content: space-between; */
 
@@ -110,11 +110,12 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .navbar-brand{
+    .navbar-brand {
         margin-left: 33%;
     }
 
 }
+
 /* @media only screen and (max-width: 575px) {
     .nav-row{
         width: auto;
@@ -135,7 +136,7 @@ footer {
     display: flex;
 }
 
-footer > div{
+footer>div {
     width: 33%;
 }
 
@@ -165,7 +166,7 @@ footer a:hover {
     padding: 0;
 }
 
-.contact-div{
+.contact-div {
     flex: none;
 }
 
@@ -199,7 +200,7 @@ li>i {
         text-align: center;
     }
 
-    footer > div{
+    footer>div {
         width: auto;
     }
 
@@ -207,15 +208,15 @@ li>i {
 
 /*----Index----------*/
 
-.alert-div{
+.alert-div {
     margin: 30px;
 }
 
-.alert-div > button {
+.alert-div>button {
     float: right;
 }
 
-.alert-div > p {
+.alert-div>p {
     margin-left: 50px;
     padding: 0 10px;
 }
@@ -224,6 +225,7 @@ li>i {
     text-decoration: underline;
     cursor: pointer;
 }
+
 /*----Profile section--*/
 
 .profile-img {
@@ -246,11 +248,12 @@ li>i {
 }
 
 @media only screen and (max-width: 575px) {
-    .alert-div{
+    .alert-div {
         margin: 15px 0;
     }
 
 }
+
 /*---Contact Form---*/
 .form-container {
     margin-bottom: 50px;
@@ -262,11 +265,39 @@ li>i {
     align-items: center;
 }
 
+.contact-form>input,
+.contact-form>textarea {
+    margin-bottom: 5px;
+}
+
 .contact-form>button {
     margin: 10px;
     font-weight: 600;
 }
 
+/*----Booking forms----*/
+.booking-form-head{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.booking-inputs > p {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center
+}
+
+.booking-inputs select,
+.booking-inputs input {
+    width: 50%;
+    text-align: center;
+}
+
+.booking-form-submit{
+    display: flex;
+    justify-content: center;
+}
 /*-----View bookings--*/
 .bookings-sub-div {
     border: 1px solid black;
@@ -355,3 +386,4 @@ li>i {
         width: 100%;
     }
 }
+

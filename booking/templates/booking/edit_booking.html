@@ -4,25 +4,57 @@
 {% block title %}Edit Booking{% endblock %}
 
 {% block content %}
+<section class="main-section">
+    <div class="bookings-div">
+        <div class="booking-form-head">
+            <h1><strong>Booking Modifications can be submitted below:</strong></h1>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="booking-inputs">
+                {{ form.as_p }}
+            </div>
+            <div class="booking-form-submit">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Sumbmit
+                    Booking Modification</button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Booking Submitted</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Thank you for submitting your booking request!</p>
+                            <p>Booking available to view in pending bookings. Please contact Jennie to us to arrange
+                                payment if any payments or outstanding or your booking may not be accepted.</p>
+                            <li class="ms-3"><i class="fa-solid fa-phone"> </i>+353 86 087 3335</li>
+                            <li class="ms-3"><i class="fa-solid fa-envelope"> </i>jenniemcaleese@hotmail.com</li>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">I understand</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
-<div>
-    <h1><strong>This that EDIT booking form</strong></h1>
-</div>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Sumbmit Booking Modification</button>
-</form>
-
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-        {% if "dup_booking" in message.tags %}
-            <li class= "{{ message.tags }}" >{{ message }}</li>
-        {% elif "same_day_booking" in message.tags %}
-            <li class= "{{ message.tags }}" >{{ message }}</li>
-        {% endif %}        
-    {% endfor %}
-</ul>
-{% endif %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            {% if "dup_booking" in message.tags %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% elif "same_day_booking" in message.tags %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}
