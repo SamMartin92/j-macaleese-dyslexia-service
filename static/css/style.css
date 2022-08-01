@@ -8,7 +8,7 @@
 
 /*----Gen Rules--*/
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .justify-center {
@@ -95,12 +95,6 @@
     width: 100%;
 }
 
-.nav-logo {
-    /* display: flex;
-    justify-content: space-between; */
-
-}
-
 .navbar-toggler {
     float: right;
 }
@@ -115,13 +109,6 @@
     }
 
 }
-
-/* @media only screen and (max-width: 575px) {
-    .nav-row{
-        width: auto;
-    }
-
-} */
 
 /*-----Footer----*/
 
@@ -275,6 +262,13 @@ li>i {
     font-weight: 600;
 }
 
+#success-message{
+    background-color: #329199;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
 /*----Booking forms----*/
 .booking-form-head{
     margin-bottom: 15px;

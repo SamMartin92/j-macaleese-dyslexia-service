@@ -28,11 +28,13 @@ Home
 
 <div class="alert alert-warning alert-div" role="alert">
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  <p> Hi {{ user.first_name }}, we require some more details to best serve you. Please submit <span class="alert-link" data-bs-toggle="modal" data-bs-target="#clientDetailsModal">here</span>.</p>
+  <p> Hi {{ user.first_name }}, we require some more details to best serve you. Please submit <span class="alert-link"
+      data-bs-toggle="modal" data-bs-target="#clientDetailsModal">here</span>.</p>
 </div>
 
 <!-- Modal -->
-<div class="modal fade off-black" id="clientDetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade off-black" id="clientDetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -173,8 +175,8 @@ Home
 
 <section class="container form-container off-black">
   <div class="row bg-color-contact">
-    <div>
-      <h3 class="contact-heading uppercase text-center">Have a question?</h3>
+    <div class="contact-heading">
+      <h3 class="uppercase text-center" id="contact-form-div">Have a question?</h3>
       <h5 class="uppercase text-center">We'll get right back to you</h5>
     </div>
     <div id="contact-form" class="center-form">
@@ -188,7 +190,7 @@ Home
       </form>
     </div>
     <div id="success-message" class="hidden">
-      <p>Thank you for your enquiry. We will respond shortly.</p>
+      <h3>Thank you for your enquiry. We will respond shortly.</h3>
     </div>
   </div>
 </section>
