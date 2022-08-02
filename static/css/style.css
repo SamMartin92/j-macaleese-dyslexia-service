@@ -68,6 +68,10 @@
     background-color: #fca253;
 }
 
+.bg-orage-gradient{
+    background: linear-gradient(90deg, rgba(252,169,97,1) 48%, rgba(252,162,83,1) 100%);
+}
+
 .bg-light-orange {
     background-color: #fca961;
 }
@@ -213,6 +217,25 @@ li>i {
     cursor: pointer;
 }
 
+
+
+
+@media only screen and (max-width: 768px) {
+    .hero-image-contain{
+        justify-content: center;
+    }
+
+    .hero-img-div{
+        padding: 0;
+        margin: 0;
+    }
+
+    .home-image{
+        width: 100%;
+    }
+    
+
+}
 /*----Profile section--*/
 
 .profile-img {
