@@ -118,6 +118,7 @@
 
 .footer-container {
     --bs-gutter-x: 0;
+    
 }
 
 footer {
@@ -217,7 +218,9 @@ li>i {
     cursor: pointer;
 }
 
-
+.index-btn{
+    font-weight: bolder;
+}
 
 
 @media only screen and (max-width: 768px) {
@@ -234,12 +237,18 @@ li>i {
         width: 100%;
     }
     
-
+    .profile-img-div{
+        padding: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 575px) {
     .alert-div {
         margin-top: 15px;
+    }
+
+    .profile-text{
+        padding: 2rem 0 1rem 0 !important;
     }
 
 }
