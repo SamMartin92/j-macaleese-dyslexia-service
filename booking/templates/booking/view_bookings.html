@@ -4,9 +4,9 @@
 {% block title %}Bookings{% endblock %}
 
 {% block content %}
-<header class="py-5 bg-orange-gradient banner-container">
+<header class="py-5 bg-orange-gradient banner-container off-black">
   <div class="container px-4 px-lg-5 my-5">
-    <div class="text-center text-white">
+    <div class="text-center">
       <h1 class="display-4 banner-head">Bookings</h1>
       <p class="lead fw-normal">View history & Manage your bookings below</p>
     </div>
@@ -36,8 +36,8 @@
               </div>
 
               <div class="booking-btns">
-                <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button class="btn bg-light-orange"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
+                <button type="button" class="btn btn-delete" data-bs-toggle="modal"
                   data-bs-target="#delete_modal{{ booking.id }}">
                   Cancel Booking
                 </button>
@@ -62,7 +62,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
+                <button class="btn btn-delete"><a href="/cancel_booking/{{ booking.id }}">Cancel booking</a></button>
               </div>
             </div>
           </div>
@@ -105,8 +105,8 @@
                 {{ booking.time_slot }}
               </div>
               <div class="booking-btns">
-                <button class="btn btn-warning"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button class="btn bg-light-orange"><a href="/edit_booking/{{ booking.id }}">Modify booking</a></button>
+                <button type="button" class="btn btn-delete" data-bs-toggle="modal"
                   data-bs-target="#delete_modal{{ booking.id }}">
                   Cancel Booking
                 </button>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button class="btn btn-warning"><a href="/cancel_booking/{{ booking.id }}">Cancel
+                  <button class="btn btn-delete"><a href="/cancel_booking/{{ booking.id }}">Cancel
                       booking</a></button>
                 </div>
               </div>
@@ -194,7 +194,7 @@
 
         <div class="no-bookings-div">
           <p>You currently have no upcoming bookings. Would you like to book a class?</p>
-          <button class="btn btn-warning"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
+          <button class="btn bg-light-orange"><a href="{% url 'make_booking' %}">Make a booking</a> </button>
         </div>
 
 

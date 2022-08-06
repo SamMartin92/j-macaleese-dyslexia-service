@@ -49,6 +49,13 @@
     font-weight: 700;
 }
 
+.btn{
+    padding: 5px;
+}
+
+.btn a{
+    color: inherit;
+}
 
 /*----Colours---*/
 
@@ -89,7 +96,7 @@
 }
 
 .bg-navy-blue {
-    background-color: #4460aa
+    background-color: #b3112d;
 }
 
 .bg-dark-green {
@@ -431,6 +438,10 @@ li>i {
     margin: 10px;
 }
 
+.btn-delete{
+    background-color: #da5961;
+    font-weight: 500;
+}
 
 /*---Client details form--*/
 
