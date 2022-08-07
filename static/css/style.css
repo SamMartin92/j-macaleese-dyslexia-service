@@ -386,6 +386,19 @@ li>i {
     text-align: center;
 }
 
+.messages{
+    margin: 20px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    background: rgba(252, 162, 83, .75);
+    border-radius: 5px;
+}
+
+.messages > p{
+    margin-bottom: 0 !important;
+    font-size: larger;
+}
+
 .booking-inputs > p {
     display: flex;
     justify-content: space-between;
@@ -402,6 +415,7 @@ li>i {
 .booking-form-submit{
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 /*-----View bookings--*/
 .bookings-sub-div {

@@ -10,18 +10,29 @@
         <div class="booking-form-head">
             <h1><strong>Submit booking request below:</strong></h1>
         </div>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            {% if "dup_booking" in message.tags %}
+            <p class="{{ message.tags }}">{{ message | safe }}</p>
+            {% elif "same_day_booking" in message.tags %}
+            <p class="{{ message.tags }}">{{ message | safe }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
         <form method="POST">
             {% csrf_token %}
             <div class="booking-inputs">
                 {{ form.as_p }}
             </div>
             <div class="booking-form-submit">
-            <button type="button" class="btn btn-primary" id="booking-submit" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">Submit</button>
+                <button type="button" class="btn btn-primary" id="booking-submit" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Submit</button>
             </div>
 
             <!-- Modal -->
-            <div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -37,24 +48,14 @@
                             <li class="ms-3"><i class="fa-solid fa-envelope"> </i>jenniemcaleese@hotmail.com</li>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" id="close-modal-btn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" id="close-modal-btn" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">I understand</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            {% if "dup_booking" in message.tags %}
-            <li class="{{ message.tags }}">{{ message | safe }}</li>
-            {% elif "same_day_booking" in message.tags %}
-            <li class="{{ message.tags }}">{{ message | safe }}</li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
     </div>
 </section>
 

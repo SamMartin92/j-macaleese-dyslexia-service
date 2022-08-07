@@ -9,6 +9,17 @@
         <div class="booking-form-head">
             <h1><strong>Booking Modifications can be submitted below:</strong></h1>
         </div>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            {% if "dup_booking" in message.tags %}
+            <p class="{{ message.tags }}">{{ message | safe }}</p>
+            {% elif "same_day_booking" in message.tags %}
+            <p class="{{ message.tags }}">{{ message | safe }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
         <form method="POST">
             {% csrf_token %}
             <div class="booking-inputs">
@@ -16,7 +27,7 @@
             </div>
             <div class="booking-form-submit">
                 <button type="button" id="booking-submit" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">Sumbmit
+                    data-bs-target="#staticBackdrop">Submit
                     Booking Modification</button>
             </div>
             <!-- Modal -->
@@ -45,18 +56,6 @@
                 </div>
             </div>
         </form>
-
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            {% if "dup_booking" in message.tags %}
-            <li class="{{ message.tags }}">{{ message }}</li>
-            {% elif "same_day_booking" in message.tags %}
-            <li class="{{ message.tags }}">{{ message }}</li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
     </div>
 </section>
 {% endblock %}
