@@ -37,13 +37,10 @@ def booking_form(request):
 def get_bookings(request):
     user = request.user
     bookings = Booking.objects.filter(user=user)
-    upcoming_bookings = []
     pending_bookings = []
     confirmed_bookings = []
     past_bookings = []
     for booking in bookings:
-        if booking.status <= 1:
-            upcoming_bookings.append(booking)
         if booking.status == 0:
             pending_bookings.append(booking)
         elif booking.status == 1:
@@ -52,7 +49,7 @@ def get_bookings(request):
             past_bookings.append(booking)        
             
     context = {
-        'upcoming_bookings': upcoming_bookings,
+        'upcoming_bookings': pending_bookings+confirmed_bookings,
         'pending_bookings': pending_bookings,
         'confirmed_bookings' : confirmed_bookings,
         'past_bookings': past_bookings
