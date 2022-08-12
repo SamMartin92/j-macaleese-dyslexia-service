@@ -56,18 +56,18 @@
                                     Services
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{% url 'services' %}">Dyslexia Screening</a></li>
-                                    <li><a class="dropdown-item" href="#">Intervention Classes</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'services' %}#dyslexia-screening">Dyslexia Screening</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'services' %}#intervention-classes">Intervention Classes</a></li>
                                     <li>
                                         <hr class="dropdown-divider" />
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">Business Consultation</a>
+                                        <a class="dropdown-item" href="{% url 'services' %}#business-consultation">Business Consultation</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="{% url 'home_page' %}#contact-form">Contact</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Blog</a>
