@@ -1,0 +1,557 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important; */
+}
+
+/*----Gen Rules--*/
+.hidden {
+    display: none !important;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    text-align: center;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align{
+    text-align: right;
+}
+.main-section {
+    min-height: 75vh;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    color: #2c3e50
+}
+
+@media only screen and (max-width: 575px) {
+    .main-section {
+        margin: 40px 0;
+    }
+
+}
+
+.banner-container{
+    margin-top: 25px;
+}
+
+.banner-head{
+    font-weight: 700;
+}
+
+.btn{
+    padding: 5px;
+}
+
+.btn a{
+    color: inherit;
+}
+
+/*----Colours---*/
+
+.orange {
+    color: #fca253;
+}
+
+.light-orange {
+    color: #fca961;
+}
+
+.navy-blue {
+    color: #4460aa
+}
+
+.dark-green {
+    color: #206755
+}
+
+.light-green {
+    color: #329199
+}
+
+.off-black {
+    color: #2c3e50
+}
+
+.bg-orange {
+    background-color: #fca253;
+}
+
+.bg-orange-gradient{
+    background: linear-gradient(0deg, rgba(252,169,97,.7) 48%, rgba(252,162,83,1) 100%);
+}
+
+.bg-light-orange {
+    background-color: #fca961;
+}
+
+.bg-navy-blue {
+    background-color: #b3112d;
+}
+
+.bg-dark-green {
+    background-color: #206755
+}
+
+.bg-light-green {
+    background-color: rgba(37, 150, 190, .1)
+}
+
+/*------Nav----*/
+
+.nav-contain {
+    display: inline-block;
+}
+
+.nav-row {
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-toggler {
+    float: right;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-brand {
+        margin-left: 33%;
+    }
+
+}
+
+/*-----Footer----*/
+
+.footer-container {
+    --bs-gutter-x: 0;
+    
+}
+
+footer {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    padding: 1.5rem 0 !important; 
+}
+
+footer>div {
+    width: 33%;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
+
+footer a:hover {
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: underline;
+}
+
+.footer-logo {
+    font-size: 25px;
+    padding: 15px;
+}
+
+.team-link {
+    font-size: 25px;
+    padding: 15px;
+}
+
+.footer-ul {
+    display: list-item;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0 !important;
+}
+
+.contact-div {
+    flex: none;
+}
+
+.footer-ul>li {
+    display: flex;
+}
+
+li>i {
+    margin-right: 15px;
+}
+
+
+
+@media only screen and (max-width: 575px) {
+    footer {
+        height: auto;
+        display: block;
+        text-align: center;
+    }
+
+    .footer-ul {
+        line-height: 2em;
+    }
+
+    .footer-ul>li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .left-align {
+        text-align: center;
+    }
+
+    footer>div {
+        width: auto;
+    }
+
+}
+
+/*----Index----------*/
+
+.alert-div {
+    margin: 30px 30px 0 30px;
+}
+
+.alert-div>button {
+    float: right;
+}
+
+.alert-div>p {
+    margin-left: 50px;
+    padding: 0 10px;
+}
+
+.alert-div span {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.index-btn{
+    font-weight: bolder;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .hero-image-contain{
+        justify-content: center;
+    }
+
+    .hero-img-div{
+        padding: 0;
+        margin: 0;
+    }
+
+    .home-image{
+        width: 100%;
+    }
+    
+    .profile-img-div{
+        padding: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .alert-div {
+        margin-top: 15px;
+    }
+
+    .profile-text{
+        padding: 2rem 0 1rem 0 !important;
+    }
+
+}
+/*----Profile section--*/
+
+.profile-img {
+    max-height: 300px;
+}
+
+
+/*-----Features--*/
+#featured-3{
+    margin-bottom: 30px;
+}
+
+.feature-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.feature-icon {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+
+/*---Services---*/
+
+.main-section-services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 75vh;
+    margin: 0 40px 40px 40px;
+    color: #2c3e50;
+}
+
+.services-container{
+    margin: 50px 0;
+}
+
+.services-heading-left{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 40px auto 0 0;
+}
+
+.services-heading-right{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 40px 0 0 auto;
+}
+
+.services-sub{
+    line-height: 1.55;
+}
+
+.services-highlight{
+    background-color: rgba(50, 145, 153, .25);
+    padding: 10px;
+}
+
+.services-border{
+    height: 3px;
+    border: 3px solid #fca253;
+    margin: 30px 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .services-heading-right{
+        text-align: left !important;
+    }
+    
+    .services-sub{
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .services-heading-left,
+    .services-heading-right{
+        font-size: 2.5rem;
+    }
+
+}
+/*---Contact Form---*/
+.form-container {
+    margin-bottom: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form>input,
+.contact-form>textarea {
+    margin-bottom: 5px;
+}
+
+.contact-form>button {
+    margin: 10px;
+    font-weight: 600;
+}
+
+#success-message{
+    background-color: #329199;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+/*----Booking forms----*/
+.booking-form-head{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.messages{
+    margin: 20px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    background: rgba(252, 162, 83, .75);
+    border-radius: 5px;
+}
+
+.messages > p{
+    margin-bottom: 0 !important;
+    font-size: larger;
+}
+
+.booking-inputs > p {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center
+}
+
+.booking-inputs select,
+.booking-inputs input {
+    width: 50%;
+    text-align: center;
+}
+
+.booking-form-submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+/*-----View bookings--*/
+.bookings-sub-div {
+    border: 1px solid black;
+    margin: 15px 0;
+}
+
+.bookings-sub-div>h4 {
+    text-align: center;
+    padding: 10px;
+}
+
+.popover-q{
+    font-size: small;
+}
+
+.booking-ul {
+    padding: 20px 0px 20px 0px;
+}
+
+
+.bookings-li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.no-bookings-div {
+    margin: 50px 0;
+}
+
+.booking-btns {
+    margin: 10px;
+}
+
+.btn-delete{
+    background-color: #da5961;
+    font-weight: 500;
+}
+
+/*---Client details form--*/
+
+.client-details-head {
+    margin: 30px 0;
+    max-width: 400px;
+}
+
+.client-details-form {
+    max-width: 400px;
+}
+
+.client-details-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#already_diagnosed,
+#is_guardian {
+    float: right;
+    position: relative;
+}
+
+.form-phone-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-child-name-input {
+    max-width: 250px;
+}
+
+@media only screen and (max-width: 575px) {
+    .client-details-head {
+        margin: 30px 0;
+    }
+
+    .client-details-form {
+        padding: 5px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+    #already_diagnosed,
+    #is_guardian {
+        float: none;
+
+    }
+
+    .client-details-form label {
+        width: 100%;
+    }
+}
+
+/*---Account pages---*/
+
+.account-forms > h1, 
+.account-forms > p,
+.password-reset-form > h1,
+.password-reset-form > p{
+    text-align: center;
+    margin: 0 5%;
+}
+
+.password-reset-form > form,
+.account-forms > form{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-forms > form > p{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.forgot-password-div{
+    width: 50%;
+}
+
+.account-forms > form > button {
+    margin: 40px;
+}
+
+.account-forms > form > p > label{
+    width: 50%;
+}
