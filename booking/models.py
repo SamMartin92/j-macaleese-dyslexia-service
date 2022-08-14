@@ -57,5 +57,5 @@ class Booking(models.Model):
             name='unique_time_slot')
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}:
-            {self.booking_date}, {self.time_slot}
+        return f"{self.user.first_name} {self.user.last_name}:"
+        f"{self.booking_date}, {self.time_slot}"

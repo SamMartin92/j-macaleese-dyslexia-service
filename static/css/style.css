@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -109,6 +111,11 @@
 }
 
 /*------Nav----*/
+.logo{
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-family: 'Ubuntu', san-serif;
+}
 
 .nav-contain {
     display: inline-block;
