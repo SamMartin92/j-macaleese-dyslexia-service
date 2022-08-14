@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'django.contrib.staticfiles',
+    'django_summernote',
     'home',
     'booking',
     'blog',

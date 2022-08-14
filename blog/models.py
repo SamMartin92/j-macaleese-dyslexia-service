@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 
 class Post(models.Model):
-    title =models.CharField(max_length= 200, unique=True)
-    slug = models.SlugField(max_length = 200, unique=True)
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = models.ImageField()
