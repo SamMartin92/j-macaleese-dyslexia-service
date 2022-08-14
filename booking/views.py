@@ -1,13 +1,12 @@
 import datetime
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Booking
-from .forms import BookingForm
 from django.db import IntegrityError
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .models import Booking
+from .forms import BookingForm
 
 
-# Create your views here.
 @login_required
 def booking_form(request):
     if request.method == 'POST':
@@ -19,7 +18,8 @@ def booking_form(request):
                 if new_booking.booking_date <= datetime.date.today():
                     messages.info(
                         request,
-                        'Bookings must be made at least 1 day in advance, please select another date',
+                        'Bookings must be made at least 1 day in advance,' +
+                        'please select another date',
                         extra_tags='same_day_booking')
                 else:
                     new_booking.user = request.user
@@ -76,7 +76,8 @@ def edit_booking(request, booking_id):
                 if new_booking.booking_date <= datetime.date.today():
                     messages.info(
                         request,
-                        'Bookings must be made at least 1 day in advance, please select another date',
+                        'Bookings must be made at least 1 day in advance,' +
+                        'please select another date',
                         extra_tags='same_day_booking')
                 else:
                     new_booking.user = request.user

@@ -18,7 +18,6 @@ from django.urls import path, include
 from home.views import home_page, client_details_form, services
 from booking import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home_page'),
@@ -29,6 +28,7 @@ urlpatterns = [
     path('edit_booking/<booking_id>', views.edit_booking, name='edit_booking'),
     path('cancel_booking/<booking_id>', views.cancel_booking, 
          name='cancel_booking'),
+    # path('blog/', include('blog.urls'), name='blog'),
     path('accounts/', include('allauth.urls')),
     path('summernote/', include('django_summernote.urls')),
 ]
