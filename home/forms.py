@@ -1,14 +1,22 @@
 from django import forms
 from .models import Client
 from allauth.account.forms import SignupForm
-from phonenumber_field.formfields import PhoneNumberField
 
 
 class CustomSignupForm(SignupForm):
-    first_name = forms.CharField(max_length=30, label='First Name')
-    last_name = forms.CharField(max_length=30, label='Last Name')
-    
- 
+    first_name = forms.CharField(
+        max_length=30,
+        label='First Name',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'First Name'}))
+    last_name = forms.CharField(
+        max_length=30,
+        label='Last Name',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Last Name'}))
+
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
         user.first_name = self.cleaned_data['first_name']
@@ -18,9 +26,7 @@ class CustomSignupForm(SignupForm):
 
 
 class ClientDetailsForm(forms.ModelForm):
-    
+
     class Meta:
         model = Client
         fields = ['phone']
-    
-
