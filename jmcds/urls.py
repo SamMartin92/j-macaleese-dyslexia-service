@@ -29,5 +29,4 @@ urlpatterns = [
     path('cancel_booking/<booking_id>', views.cancel_booking, 
          name='cancel_booking'),
     path('accounts/', include('allauth.urls')),
-    path('summernote/', include('django_summernote.urls')),
 ]

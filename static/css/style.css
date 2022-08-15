@@ -408,13 +408,13 @@ li>i {
 
 .messages {
     margin: 20px;
-    padding: 10px 10px 10px 10px;
     text-align: center;
     background: rgba(252, 162, 83, .75);
     border-radius: 5px;
 }
 
 .messages>p {
+    padding: 10px;
     margin-bottom: 0 !important;
     font-size: larger;
 }

@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['jmcds.herokuapp.com', 'localhost']
-CSRF_TRUSTED_ORIGINS = ['https://jmcds.herokuapp.com//', 'https://8000-sammartin92-jmacaleesed-01axxq9kfz7.ws-eu60.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://jmcds.herokuapp.com//', 'https://8000-sammartin92-jmacaleesed-01axxq9kfz7.ws-eu61.gitpod.io']
 
 
 # Application definition
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'django.contrib.staticfiles',
-    'django_summernote',
     'home',
     'booking',
 ]
