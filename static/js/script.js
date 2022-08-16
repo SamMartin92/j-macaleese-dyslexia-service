@@ -20,14 +20,14 @@ function sendMail(contactForm) {
             }
         ),
         function (error) {
-            console.log("Error", error)
+            console.log("Error", error);
         };
 
-    return false
+    return false;
 }
 
 function emptyDateModal() {
-    let dateInput = document.getElementById("id_booking_date")
+    let dateInput = document.getElementById("id_booking_date");
     if (dateInput.value == "") {
         modalContent.innerHTML = `<div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Booking Unsuccessful</h5>
@@ -38,7 +38,7 @@ function emptyDateModal() {
         </div>
         <div class="modal-footer">
             <button type="button" id="close-modal-btn" class="btn btn-secondary" data-bs-dismiss="modal">Ok!</button>
-        </div>`
+        </div>`;
     }
 }
 
@@ -57,23 +57,23 @@ function resetModalContent() {
         <div class="modal-footer">
             <button type="button" id="close-modal-btn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">I understand</button>
-        </div>`
+        </div>`;
 }
 
 function resetTimeout() {
-    setTimeout(resetModalContent, 500)
+    setTimeout(resetModalContent, 500);
 }
 
 function onEmptyDateModalClose() {
-    let closeModalBtn = document.getElementById("close-modal-btn")
-    closeModalBtn.addEventListener("click", resetTimeout)
-};
+    let closeModalBtn = document.getElementById("close-modal-btn");
+    closeModalBtn.addEventListener("click", resetTimeout);
+}
 // initiates event listeners if present on page
 if (bookingSubmit != null) {
     bookingSubmit.addEventListener("click", () => {
         emptyDateModal();
         onEmptyDateModalClose();
-    })
+    });
 }
 
 if (guardianCheckBox != null) {
