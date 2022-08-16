@@ -54,7 +54,6 @@ class Booking(models.Model):
                 'booking_date',
                 'time_slot'],
             name='unique_time_slot')]
-        # unique_together = ('booking_date', 'time_slot',)
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}:{self.booking_date}, {self.time_slot}"
