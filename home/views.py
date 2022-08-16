@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Client
 from .forms import ClientDetailsForm
 
-# Create your views here.
-
 
 def home_page(request):
     context = {}

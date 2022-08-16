@@ -66,7 +66,7 @@ def edit_booking(request, booking_id):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         user = request.user
-        if form.is_valid():         
+        if form.is_valid():
                 new_booking = form.save(commit=False)
                 if new_booking.booking_date <= datetime.date.today():
                     messages.info(
