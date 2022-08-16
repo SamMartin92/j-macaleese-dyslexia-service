@@ -438,6 +438,9 @@ li>i {
     margin-top: 50px;
 }
 
+.errorlist{
+    display: none;
+}
 /*-----View bookings--*/
 .bookings-sub-div {
     margin: 15px 0;
@@ -465,6 +468,7 @@ li>i {
 
 .no-bookings-div {
     margin: 50px 0;
+    text-align: center;
 }
 
 .booking-btns {

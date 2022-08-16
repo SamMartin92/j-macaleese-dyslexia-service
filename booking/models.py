@@ -2,7 +2,6 @@ import datetime
 from django.db import models
 from django.db.models import UniqueConstraint
 from django.contrib.auth.models import User
-# Create your models here.
 
 CLASS_TYPE = (
     ('Dyslexia Assesment', 'Dyslexia Assesment'),
@@ -50,12 +49,12 @@ class Booking(models.Model):
 
     class Meta:
         ordering = ['status', 'booking_date', 'time_slot']
-        UniqueConstraint(
+        constraints = [models.UniqueConstraint(
             fields=[
                 'booking_date',
                 'time_slot'],
-            name='unique_time_slot')
+            name='unique_time_slot')]
+        # unique_together = ('booking_date', 'time_slot',)
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}:"
-        f"{self.booking_date}, {self.time_slot}"
+        return f"{self.user.first_name} {self.user.last_name}:{self.booking_date}, {self.time_slot}"

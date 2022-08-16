@@ -13,25 +13,22 @@ def booking_form(request):
         form = BookingForm(request.POST)
         user = request.user
         if form.is_valid():
-            try:
-                new_booking = form.save(commit=False)
-                if new_booking.booking_date <= datetime.date.today():
-                    messages.info(
-                        request,
-                        'Bookings must be made at least 1 day in advance,' +
-                        'please select another date',
-                        extra_tags='same_day_booking')
-                else:
-                    new_booking.user = request.user
-                    new_booking.save()
-                    return redirect('get_bookings')
-            except IntegrityError:
+            new_booking = form.save(commit=False)
+            if new_booking.booking_date <= datetime.date.today():
                 messages.info(
                     request,
-                    'Time unavailable, please choose another time slot',
-                    extra_tags='dup_booking')
-                return redirect('make_booking')
-
+                    'Bookings must be made at least 1 day in advance,' +
+                    'please select another date',
+                    extra_tags='same_day_booking')
+            else:
+                new_booking.user = request.user
+                new_booking.save()
+                return redirect('get_bookings')
+        else:
+            messages.info(
+                request,
+                'Time unavailable, please choose another time slot',
+                extra_tags='dup_booking')
     form = BookingForm()
     context = {
         'form': form
@@ -70,8 +67,7 @@ def edit_booking(request, booking_id):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         user = request.user
-        if form.is_valid():
-            try:
+        if form.is_valid():         
                 new_booking = form.save(commit=False)
                 if new_booking.booking_date <= datetime.date.today():
                     messages.info(
@@ -84,11 +80,11 @@ def edit_booking(request, booking_id):
                     new_booking.status = 0
                     new_booking.save()
                     return redirect('get_bookings')
-            except IntegrityError:
-                messages.info(
-                    request,
-                    'Time unavailable, please choose another time slot',
-                    extra_tags='dup_booking')
+        else:
+            messages.info(
+                request,
+                'Time unavailable, please choose another time slot',
+                extra_tags='dup_booking')
 
     form = BookingForm(instance=booking)
     context = {
