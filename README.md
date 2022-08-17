@@ -1,38 +1,22 @@
 # Jennie MacAleese Dyslexia Service
 
-## Contents 
-- [User Experience (UX)](#user-experience-ux)
-   * [Strategy](#strategy)
-   * [User Stories](#user-stories) 
-   * [Scope](#scope)
-      + [Current Features](#current-features)
-      + [Features to implement in the future](#features-to-implement-in-the-future)
-   * [Structure](#structure)
-   * [Skeleton](#skeleton)
-   * [Surface](#surface)
-     + [Colour Scheme](#colour-scheme)
-     + [Typography](#typography)
-     + [Imagery](#imagery)
-     + [Design Choices](#design-choices)
-- [Technologies](#technologies)
-   * [Languages used](#languages-used)
-   * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
-- [Challenges](#challenges)
-- [Testing](#testing)
-   
-- [Deployment](#deployment)
-   * [Creation](#creation)
-   * [Forking](#forking)
-   * [Clone](#clone)
-   * [Setting Up Project](#setting-up-project)
-   * [Heroku Deployment](#heroku-deployment)
-- [Credits](#credits)
-   * [Code](#code)
-   * [Content](#content)
-   * [Media](#media)
-   * [Acknowledgements](#acknowledgements)
+![Multi Device Mockup](documentation/readme/multi-device.PNG)
 
+[Link to live Site](https://jmcds.herokuapp.com/)
 
+JMCDS is a Full Stack site with a centrally owned datatset, user authentication and role based access to mechanisms within the site. It was built for my fourth Portfolio project with [Code Institute](https://codeinstitute.net/ie/) and exists purely for the purpose of displaying my knowledge & capabilities in regards to the project's assessment criteria.
+
+JMCDS is a prototype site to demonstrate what could potentially be used as a site for my sister Jennie MacAleese to offer in the future to potential clients, upon qualification as a Specialist Dyslexia Practitioner. The site advertises the services she may offer and manage bookings. It will also allows users to communicate with her, register with her site and book classes.
+
+## User Experience:
+
+ * ## Vision:
+    The idea and aim of the site is to create a clear and obvious representation of what the business offers to its clients. The site should provide information on the servcies on offer and give users the ability to get in contact with Jennie to avail of the services or send any queries they may have.
+    The site should also provide a portal for client's to register, provide their information and submit booking requests for classes at their own convenience, supplying both user and site owner a simple way to manage class scheduling.
+    For the site owner, the ability to manage the teaching schedule and handle client bookings through the admin site is necessary for the efficient running of the business.
+ * ## Target Audience:
+  Dyslexia affects up to [20% of us](https://dyslexia.yale.edu/dyslexia/dyslexia-faq/). It is one of the most common learning difficulties encountered in society. The target audience for this site would be dyslexia sufferers, those who may think an assessment is worth their time and those who care for dysexia sufferers or who know someone they believe may benefit from the service. 
+  The services provided can help those with dyslexia cope with any asociated struggles of the condition in their day-to-day lives, in eductaion, work or at home, and it is those that the site aims to connect with and offer assistance to.
 ## Technologies
 
 ### Languages Used
