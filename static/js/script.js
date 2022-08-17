@@ -59,7 +59,7 @@ function resetModalContent() {
             <button type="submit" class="btn btn-primary">I understand</button>
         </div>`;
 }
-
+ // prevents reset modal content flashing on screan before modal is fully closed
 function resetTimeout() {
     setTimeout(resetModalContent, 500);
 }
