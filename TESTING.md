@@ -132,3 +132,40 @@ models.py     | ![booking models.py](documentation/readme/testing/pep-8/booking-
 
 
 # Other manual testing
+
+### Booking forms
+- There are some mechanisms within the booking forms to prevent faulty bookings from entering the system. 
+- As seen in the user stories above, the booking forms will not allow double bookings and a message will be diplayed to the user if they attempt this. This is confgured in views.py.
+- Similarly, bookings must be made 1 day in advance to prevent bookings with dates in the past being made. A similar message will display for the user if they try submit a past date through the form. This was tested by submitting a date in the past into the form.
+
+![past date](documentation/readme/testing/past-date.PNG) ![past date message](documentation/readme/testing/user-stories/past-date-message.PNG)
+
+- The booking forms will also not accept empty or invalid dates. If these are entered, the booking form will not save and a message will display in a modal advising the user to select a date. They cannot dismiss this modal without clicking the 'OK' button.
+- This is handled with the following custom javascript. The full functions wihtin the eventListener can be seen in script.js.
+
+``if (bookingSubmit != null) {
+    bookingSubmit.addEventListener("click", () => {
+        emptyDateModal();
+        onEmptyDateModalClose();
+    });
+}``
+
+- This was tested by submitting invalid data into both forms and ensuring the form did not submit. Evidence below:
+
+![empty date](documentation/readme/testing/empty-date.PNG) ![invalid date](documentation/readme/testing/invalid-date.PNG)
+
+- It was then confirmed after in the admin site that no bookngs with invalid data were present.
+
+### Client details form
+- Another piece of custom javascript which was  manually tested is in the childs_name field of the client details form.
+- If a user is not submitting details for a child, it will not allow them submit a child's name.
+- It does not by disabling the field if the is_guardian checkbox is ticked.
+- This was manually tested by toggling the check box.
+
+![field disabled](documentation/readme/testing/field-disabled.PNG) ![field enabled](documentation/readme/testing/field-enabled.PNG)
+
+### Anchor tags
+- All anchor tags which link to external sites were manually tested to ensure they open in a new tab.
+- All anchor tags which link to a section on the site were manually tested to ensure they linked to the correct section.
+
+
