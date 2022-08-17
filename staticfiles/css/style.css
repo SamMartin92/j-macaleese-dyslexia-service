@@ -3,9 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    /* background: #000 !important;
-    color: #0f0 !important;
-    outline: solid #f00 1px !important; */
 }
 
 /*----Gen Rules--*/
@@ -585,3 +582,16 @@ li>i {
 .account-forms>form>p>label {
     width: 50%;
 }
+
+@media only screen and (max-width: 575px) {
+    .account-forms>form>p {
+        width: 90%;
+    }    
+}
+
+@media only screen and (max-width: 400px) {
+    .login p {
+        width: 80%;
+    }    
+}
+
