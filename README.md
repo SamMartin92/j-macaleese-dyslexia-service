@@ -220,23 +220,90 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
  - Testing for this site has been documented in seperate file [TESTING.md](TESTING.md).
 
 ## Deployment
-
-
+- This site was developed in (Gitpod)[https://www.gitpod.io/] and deployed to (Heroku)(https://www.heroku.com/)]
+- It was built using the Django framework.
+- The site was developed by previewing the site in the browser thrpugh Port 8000 in gitpod by running the command ```python manage.py runserver``` in the terminal. Changes and entries to the workspace were then committed and pushed to this Github repository.
+### Setting up the project in Gitpod workspace:
+1. Install django by running the following command ```pip3 install Django```
+2. Install gunicorn for running the deployed webiste ```pip3 install gunicorn```
+3. To install postgres to support the database ```pip3 install dj_database_url pyscopg2```
+4. Install any other required libraries by running similar commands and add them to a requirements.txt file so that heroku will install them at deployment. This is done by running ```pip3 freeze --local > requirements``` in the terminal and can be run again when necessary to add further libraries.
+5. Create your Django project by entering the following command: ```django-admin startproject < YOUR PROJECT NAME >```
+6. To create a django app, run ```python manage.py startapp < YOUR APP NAME >```
+7. Add the name of the newly created app to "INSTALLED_APPS" in settings.py.
+8. Development of apps can begin from here.
+### Deploying to Heroku
+1. Once logged into Heroku, choose the option 'Create App'.
+2. Attach the database in the Resources tab in Add-ons. Search for 'Heroku Postgres' and add.
+3. In your workspace, create an env.py file which will store environment variable and add it to .gitignore so as not to expose any sensitive information publicly in Github.
+4. Store your 'SECRET_KEY' and 'DATABASE_URL' here and import into settings.py
+5. In Heroku, under settings, choose 'Reveal Config Vars and add your 'SECRET_KEY' and 'DATABASE_URL'.
+6. Migrate to the database in Gitpod using ```python manage.py makemigrations``` followed by ```python manage.py migrate```
+7. Add your heroku app url to "ALLOWED_HOSTS" in settings.py.
+8. Create a Procfile in the top level of the directory and add ```web: gunicorn projectname.wsgi``` so Heroku knows how to run the project.
+### Initial deployment:
+1. Push any changes to Github after connecting your Heroku app to your repository.
+2. Add DISABLE_COLLECTSTATIC with a value of 1 to Heroku config vars.
+3. Select Github in Deployment method and choose Deplopy branch under Manual Deploy, ensuring your main branch is chosen.
+### Subsequent deployments:
+1. For subsequent deployements, I chose to 'Enable Automatic Deploys' which meant that anytime changes were pushed to my main Github branch, the Heroku project redeployed.
+2. For the final deployment, ensure you have a dependancy to handle your static files. I used whitenoise, install with ```pip install whitenoise``` and add to MIDDLEWARE in settings.py and change STATIC_FILES_STORAGE variable to ``STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'``
+3. Remove DISABLE_COLLECTSTATIC config var.
+4. Change DEBUG to False in settings.py
+5. Push changes and deploy. 
 
   
 ## Technologies
 
-### Languages Used
+### Languages. Frameworks & Libraries Used
+- Python was the main language used to build backend, create data models and feed views to the front end to display. 
+- (Django)[https://www.djangoproject.com/]  which is an MVC framework was used to build the site.
+- (django-allauth)[https://django-allauth.readthedocs.io/en/latest/installation.html] was used to create the user authentication and associated pages.
+- (gunicorn)https://gunicorn.org/ is a Python WSGI HTTP Server used to run the site.
+- (PostgreSQL)https://www.postgresql.org/ is an open source database used the database for the site.
+- (WhiteNoise)[http://whitenoise.evans.io/en/stable/] was installed to allow the site serves its own static files, as Heroku does not handle this.
+- (Bootstrap)[https://getbootstrap.com/] is a front end toolkit which was used extensivel in the building of this site for both styling and adding components.
+- (EmailJS)[emailjs.com] is an API which was used to connet the site owner email to the contact form on the home page and provide automated replies to the user.
+- The (International telephone input)[https://www.twilio.com/blog/international-telephone-input-twilio?utm_source=intl-tel-input.com&utm_medium=referral&utm_campaign=intl_tel_input] is a Javascript plugin which is used in the phone number field of the client details form.
+- HTML was used to build the structure of each template on the site.
+- CSS was used to style the HTML elements in the site.
+- Javascript was used to make certain elements of the front-end interactive for the user.
 
-### Frameworks, Libraries & Programs Used
+### Programmes and External Sites Used
+1. [GitPod](https://www.gitpod.io/) was the IDE used to create the site.
+2. [GitHub](https://github.com/) was used to create a repository  to store the project files and connect to Heroku.
+3. [Heroku](https://dashboard.heroku.com) was used to deploy the project.
+4. [Mini Web Tool](https://miniwebtool.com/django-secret-key-generator/) was used to generate a secure SECRET_KEY
+5. [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes.
+6. [Lucid Chart](https://www.lucidchart.com/pages/) was used to create the data model diagrams.
+7. [TinyPNG](https://tinypng.com/) was used to compress the images on the site and documentation.
+8. [PEP8](http://pep8online.com/) was used to validate Python code.
+9. [W3C Markup Validation Service](https://validator.w3.org/) was used to validate HTML code.
+10. [W3C Markup Validation Service](https://validator.w3.org/) was used to validate CSS code.
+11. [JSHint](https://jshint.com/) was used to validate JS code
 
-- https://miniwebtool.com/django-secret-key-generator/
-- https://github.com/bitlabstudio/django-booking
 
 ## Credits
 
-- Favicon https://iconarchive.com/show/outline-icons-by-iconsmind/Books-icon.html
+### Media
+- The favicon used for the site was taken from (here)[https://iconarchive.com/show/outline-icons-by-iconsmind/Books-icon.html]
+- The hero image on th home page was found on (pexels.com)[https://www.pexels.com/]
+- The profile image of Jennie is taken with permission from her Linkedin.
+- The icons used throughout the site come from (FontAwesome)[https://fontawesome.com/]
 
 ### Code
-- extinding user model https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
-- password logins not working when changed to email authentication required. got solution here https://stackoverflow.com/questions/27967319/django-allauth-email-login-always-wrong
+- All code with some excpetions which have been called out is my own.
+- There are some cases where a html section has been taken from a free bootstap theme and then modified. This has been called out in comments within the html.
+- In extending the user model, i took some code from this (link)[https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html]
+- To fix an authentication bug when password logins were not working after reconfiguring the login setttings, I found a (solution)[https://stackoverflow.com/questions/27967319/django-allauth-email-login-always-wrong] and took the below code directly from a users answer to correct it.
+``ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True``
+
+### Acknowledgements:
+- For providing guidance and support throughout the project, I would like to thank:
+  - Slack community
+  - My mentor Akshat
+  - Tutor Support
+- Finally and most importantly, I would like to thank my big sister Jennie MacAleese who provided the inspiration for the project and consulted with me about features and content when called upon. i hope that when she is fully qualified in the future, I can make a true live business site for her to use.
