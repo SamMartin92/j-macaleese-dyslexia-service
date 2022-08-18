@@ -1,6 +1,6 @@
 # Jennie MacAleese Dyslexia Service
 
-![Multi Device Mockup](documentation/readme/multi-device.PNG)
+![Multi Device Mockup](documentation/readme/mockup.PNG)
 
 [Link to live Site](https://jmcds.herokuapp.com/)
 
@@ -12,7 +12,7 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
   - An agile approach to development was taken on this project.
   - Development was done with an iterative approach, whereby small workable additions and changes were made over the course of the project.
   - User stories were followed when putting together features for this site. A prject kanban board and Github issues, were used to asisst throughout the build process.
-  ![Multi Device Mockup](documentation/readme/.PNG)
+  ![Kanban board](documentation/readme/agile-process.PNG)
   - This approach allowed changes to be made during the build with minimal disruption to other components of the site. For instance, the home and booking apps were seperate entities to the blog app. The blog app is a feature which could have been implemented but for what the site owner envisaged, it was deemed unecessary and could be removed without affecting the rest of the site.
   - I also received feedback from the potential site owner through the build process and manually tested components as they were implemented.
 ## User Experience:
@@ -63,16 +63,16 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
   - The make-booking and edit-booking pages were to be simple pages with the forms the sole features centered in the screen. I did not feel it necessary to create wireframes for these.
     1. Home Page: 
     
-    ![Home Page Desktop Wireframe](documentation/readme/wireframes/home-page-desktop.PNG)
-    ![Home Page Mobile Wireframe](documentation/readme/wireframes/home-page-mobile.PNG)
+    ![Home Page Desktop Wireframe](documentation/readme/wireframes/home-page-desktop.PNG)![Home Page Mobile Wireframe](documentation/readme/wireframes/home-page-mobile.png)
+
     
     2. Services Page:
      
-    ![Services Page Wireframe](documentation/readme/wireframes/services.PNG)
+    ![Services Page Wireframe](documentation/readme/wireframes/services.png)
     
     3. View Bookings Page:
      
-    ![View Bookings Page Wireframe](documentation/readme/wireframes/view-bookings.PNG)
+    ![View Bookings Page Wireframe](documentation/readme/wireframes/view-bookings.png)
     
     ### Database schema:
     There are three data models used in this site:
@@ -91,7 +91,7 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
         - Their is 'uniqueconstraint' within the model bewteen the fields 'booking_date' and 'time_slot'. No two instances of bookings can exist with the both same         booking date and time slot which prevents the possibility of double bookings.
      ### Custom Data Models:
      
-     ![Custom Data Models Diagram](documentation/readme/)
+     ![Custom Data Models Diagram](documentation/readme/wireframes/models.png)
  
 5. ## Surface:
     - This site should be clear and appear professional.
@@ -101,7 +101,7 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
       - It was a design choice to go with a light colour scheme, that presented a calm theme to the user. 
       - The colors chosen were inspired by the site for [email.js.com](emailjs.com). Personally, I like the colour scheme used on this site and so chose to               replicate it in some regard.
       
-      ![Colour Scheme](documentation/readme/)
+      ![Colour Scheme](documentation/readme/colour-scheme.PNG)
       
     ### Typography
       - The font used almost entirely throughout the site is "Helvetica Neue".
@@ -117,7 +117,7 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
   - There is a call to action front and centre for users to make a booking. If they are not yet registered, this will redirect them to the registration page.
   - Users can register, log in, jump straight making a booking, educate themselves on the services on offer and contact the business from the home page. it was important to ensure that all feautures are easily accessed on the first landing page.
   
- ![Home page desktop](documentation/readme/features/home-page-desktop.PNG) ![Home page mobile](documentation/readme/features/home-page-mobile.PNG)
+ ![Home page desktop](documentation/readme/features/home-page-desktop.PNG) ![Home page mobile](documentation/readme/features/home-page-mobile.jpg)
  
  - #### Nav Bar:
   - Through the nav-bar, users can access any relevant area of the site. Clicking the logo will bring the user back to the home page.
@@ -133,7 +133,7 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
 
   - The nav-bar is fully responsive and collapses into a toggler button on smaller screens. Mobile view of the nav-bar menu shown below.
 
-![Nav-bar mobile](documentation/readme/features/nav-bar-mobile.PNG)
+![Nav-bar mobile](documentation/readme/features/nav-bar-mobile.jpg)
 
 - #### Contact-form:
   - The contact form allows clients and non-clients to contact the business from the home page.
@@ -157,7 +157,7 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
 
 ![Footer desktop](documentation/readme/features/footer-desktop.PNG)
 
-![Footer mobile](documentation/readme/features/footer-mobile.PNG)
+![Footer mobile](documentation/readme/features/footer-mobile.jpg)
 
 - #### Services:
   - The services page offers more detail than is included on the home page.
@@ -167,17 +167,17 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
 
 ![Service desktop](documentation/readme/features/services-desktop.PNG)
 
-![Service mobile 1](documentation/readme/features/services-mobile-one.PNG) ![Service mobile 2](documentation/readme/features/services-mobile-two.PNG)
+![Service mobile 1](documentation/readme/features/services-mobile-one.jpg) ![Service mobile 2](documentation/readme/features/services-mobile-two.jpg)
 
 - #### Booking forms: 
   - The site provides two booking forms for users. One to create a booking request, and one to modify a booking.
 
-![Booking form](documentation/readme/features/booking-form.PNG) ![Edit booking form](documentation/readme/features/edit-booking-form.PNG) 
+![Booking form](documentation/readme/features/booking-form.PNG) ![Edit booking form](documentation/readme/features/edit-booking-form.jpg) 
 
   - Both forms prevent empty date fields from submission and do not allow a booking be made in the past, on the same day or where another booking already exists. Information on this can be found in  [TESTING.md](TESTING.md).
   - Before a booking is made submitted a modal, with UI advising that the booking will be pending until confirmed with the site owner and how to get in touch and make payment, is displayed.
  
- ![Booking modal](documentation/readme/features/booking-modal.PNG) 
+ ![Booking modal](documentation/readme/features/booking-modal.jpg) 
  
  - The form then redirects to view-bookings.
 
@@ -189,7 +189,7 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
     2. Pending bookings: which have been submitted but not yet approved by the site owner.
     3. Past booking: which have been marked as completed by the site owner, so that uers can see their history of classes
    
-  ![Bookings mobile 1](documentation/readme/features/bookings-mobile-one.PNG)   ![Bookings mobile 2](documentation/readme/features/bookings-mobile-two.PNG) 
+  ![Bookings mobile 1](documentation/readme/features/bookings-mobile-one.jpg)   ![Bookings mobile 2](documentation/readme/features/bookings-mobile-two.jpg) 
   
    ![Bookings desktop](documentation/readme/features/bookings-desktop.PNG) 
     
