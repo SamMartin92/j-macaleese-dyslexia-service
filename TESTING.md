@@ -9,7 +9,7 @@ Page                      | Image
 --------------------      | ---------------
 index.html                | ![index](documentation/readme/testing/html/index.PNG)
 services.html             | ![services](documentation/readme/testing/html/services.PNG)
-client-details-form.html  | ![client details form ](documentation/readme/testing/html/client-details-form.PNG)
+client-details-form.html  | ![client details form ](documentation/readme/testing/html/submit-details.PNG)
 view-bookings.html        | ![view bookings](documentation/readme/testing/html/view-bookings.PNG)
 make-booking.html         | ![make booking](documentation/readme/testing/html/make-booking.PNG)
 edit-booking.html         | ![edit booking](documentation/readme/testing/html/edit-booking.PNG)
@@ -54,7 +54,7 @@ models.py     | ![booking models.py](documentation/readme/testing/pep-8/booking-
 ## Lighthouse results:
 - Desktop:
 
-![Lighthouse desktop](documentation/readme/testing/lighthouse-desktop.PNG)
+![Lighthouse desktop](documentation/readme/testing/lighthouse-destop.PNG)
 
 - Mobile:
 
@@ -90,14 +90,14 @@ models.py     | ![booking models.py](documentation/readme/testing/pep-8/booking-
 - In the admin site, the site owner has the ability to change the STATUS of a booking. This is built into the Booking model.
 - New booking are not confimred for registered users until the STATUS is updated by the site owner. A manual test for this is shown below with a pending booking.
 
-![admin pending booking](documentation/readme/testing/user-stories/admin-pending-booking.PNG) ![user pending booking](documentation/readme/testing/user-stories/user-pending-booking.PNG)
+![admin pending booking](documentation/readme/testing/user-stories/admin-pending-booking.PNG) ![user pending booking](documentation/readme/testing/user-stories/user-pending-booking.jpg) 
 
 - Once the STATUS of the booking is updated to accepted by the site owner, only then is it confirmed to the client.
-![admin accepted booking](documentation/readme/testing/user-stories/admin-booking-accepted.PNG) ![user accepted booking](documentation/readme/testing/user-stories/user-accepted-booking.PNG)
+![admin accepted booking](documentation/readme/testing/user-stories/admin-booking-accepted.PNG) ![user accepted booking](documentation/readme/testing/user-stories/user-accepted-booking.jpg)
 
 - The site owner does not have to worry about double bookings either due to the unique constraint on the bookind_date and time_slot. This was tested manually on the user site and the admin site. Feedback is provided to the admin and custom feedback is provided to registered users who try book a slot already taken through the booking forms. This was tested successfuly for both 'make booking' and 'edit booking' functionality.
 
-![admin double booking](documentation/readme/testing/user-stories/admin-double-booking.PNG) ![user double booking](documentation/readme/testing/user-stories/user-double-booking.PNG)
+![admin double booking](documentation/readme/testing/user-stories/admin-double-booking.PNG) ![user double booking](documentation/readme/testing/user-stories/user-double-booking.jpg)
   
 ##  5. As a site user I can register an account so that I provide my information & book classes
 - New users can register an account with the site through the registeration page by providing their email, first name, last name and a password.
@@ -122,13 +122,13 @@ models.py     | ![booking models.py](documentation/readme/testing/pep-8/booking-
 - The cancel button will delete the booking. Defensive prgramming has been employed here and a pop up will ask users to confirm they are sure they wish to delete a booking before they do so.
 - Manual testing of this can be seen below, as the booking no longer appears in users upcoming bookings. This also deletes it from the admin site, this has been tested
 
-![delete booking modal](documentation/readme/testing/user-stories/delete-booking-modal.PNG) ![booking deleted](documentation/readme/testing/user-stories/booking-deleted.PNG)
+![delete booking modal](documentation/readme/testing/user-stories/delete-booking-modal.jpg) ![booking deleted](documentation/readme/testing/user-stories/booking-deleted.jpg)
 
 ##  8. As a registered user I can view my previous bookings so that I can see the history of classes I have taken  
 - In the view bookings site, users can see their history of bookings once it the STATUS has been marked as completed. The past bookings can be seen in the features in (README.md)[README.md].
 - Manual testing was conducted to ensure that 'Completed' bookings showed up in the correct sections. Evidence of a manual test can be seen below;
 
-![booking completed admin](documentation/readme/testing/user-stories/booking-completed-admin.PNG) ![booking completed user](documentation/readme/testing/user-stories/booking-completed-user.PNG)
+![booking completed admin](documentation/readme/testing/user-stories/booking-completed-admin.PNG) ![booking completed user](documentation/readme/testing/user-stories/booking-completed-user.jpg)
 
 
 # Other manual testing
@@ -138,7 +138,7 @@ models.py     | ![booking models.py](documentation/readme/testing/pep-8/booking-
 - As seen in the user stories above, the booking forms will not allow double bookings and a message will be diplayed to the user if they attempt this. This is confgured in views.py.
 - Similarly, bookings must be made 1 day in advance to prevent bookings with dates in the past being made. A similar message will display for the user if they try submit a past date through the form. This was tested by submitting a date in the past into the form.
 
-![past date](documentation/readme/testing/past-date.PNG) ![past date message](documentation/readme/testing/user-stories/past-date-message.PNG)
+![past date](documentation/readme/testing/past-date.jpg) ![past date message](documentation/readme/testing/user-stories/past-date-message.jpg)
 
 - The booking forms will also not accept empty or invalid dates. If these are entered, the booking form will not save and a message will display in a modal advising the user to select a date. They cannot dismiss this modal without clicking the 'OK' button.
 - This is handled with the following custom javascript. The full functions wihtin the eventListener can be seen in script.js.
@@ -162,7 +162,7 @@ models.py     | ![booking models.py](documentation/readme/testing/pep-8/booking-
 - It does not by disabling the field if the is_guardian checkbox is ticked.
 - This was manually tested by toggling the check box.
 
-![field disabled](documentation/readme/testing/field-disabled.PNG) ![field enabled](documentation/readme/testing/field-enabled.PNG)
+![field disabled](documentation/readme/testing/field-disabled.jpg) ![field enabled](documentation/readme/testing/field-enabled.jpg)
 
 ### Anchor tags
 - All anchor tags which link to external sites were manually tested to ensure they open in a new tab.
