@@ -129,11 +129,11 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
   - When the user is authenticated, the nav-bar appears as below. Users have the option to go to view-bookings and make-booking.
   - The option to log out and with this and the aformeentioned options, it is apparent to the user what their authentication status is.
 
-![Nav-bar logged out](documentation/readme/features/nav-bar-logged-out.PNG)
+![Nav-bar logged out](documentation/readme/features/nav-br-logged-out.PNG)
 
   - The nav-bar is fully responsive and collapses into a toggler button on smaller screens. Mobile view of the nav-bar menu shown below.
 
-![Nav-bar mobile](documentation/readme/features/nav-bar-mobile.jpg)
+![Nav-bar mobile](documentation/readme/features/nav-bor-mobile.jpg)
 
 - #### Contact-form:
   - The contact form allows clients and non-clients to contact the business from the home page.
