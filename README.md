@@ -117,23 +117,23 @@ JMCDS is a prototype site to demonstrate what could potentially be used as a sit
   - There is a call to action front and centre for users to make a booking. If they are not yet registered, this will redirect them to the registration page.
   - Users can register, log in, jump straight making a booking, educate themselves on the services on offer and contact the business from the home page. it was important to ensure that all feautures are easily accessed on the first landing page.
   
- ![Home page desktop](documentation/readme/features/home-page-desktop.PNG) ![Home page mobile](documentation/readme/features/home-page-mobile.jpg)
+ ![Home page desktop](documentation/readme/features/home-page-desktop.PNG)  ![Home page mobile](documentation/readme/features/home-page-mobile.jpg)
  
  - #### Nav Bar:
   - Through the nav-bar, users can access any relevant area of the site. Clicking the logo will bring the user back to the home page.
   - The services link provides a drop down which allows the user jump to whichever service interests them.
   - While not logged-in, the nav-bar appears as below. There is the option to login or register.
   
-  ![Nav-bar logged in](documentation/readme/features/nav-bar-logged-in.PNG)
+  ![Nav-bar logged in](documentation/readme/features/nav-bor-logged-in.PNG)
   
   - When the user is authenticated, the nav-bar appears as below. Users have the option to go to view-bookings and make-booking.
   - The option to log out and with this and the aformeentioned options, it is apparent to the user what their authentication status is.
 
-![Nav-bar logged out](documentation/readme/features/nav-br-logged-out.PNG)
+![Nav-bar logged out](documentation/readme/features/nav-bar-logged-out.PNG)
 
   - The nav-bar is fully responsive and collapses into a toggler button on smaller screens. Mobile view of the nav-bar menu shown below.
 
-![Nav-bar mobile](documentation/readme/features/nav-bor-mobile.jpg)
+![Nav-bar mobile](documentation/readme/features/nav-bar-mobile.jpg)
 
 - #### Contact-form:
   - The contact form allows clients and non-clients to contact the business from the home page.
